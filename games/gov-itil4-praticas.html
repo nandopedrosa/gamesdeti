@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <style>
+        p {
+            margin-bottom: 4px !important;
+            font-size: 0.9rem;
+        }
+
+        .card-body {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+  
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev, el) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            el.appendChild(document.getElementById(data));
+        }
+
+    
+    </script>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div id="praticas"  class="row mb-5">
+            <div class="col-sm" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                <h5 id="drag1" draggable="true" ondragstart="drag(event)">
+                    <span  class="badge badge-secondary">  Gerenciamento da Estratégia</span>
+                </h5>
+                
+                <h5 id="drag2" draggable="true" ondragstart="drag(event)">
+                    <span  class="badge badge-secondary">  Gerenciamento de Portfólio</span>
+                </h5>
+                      
+
+                <p id="drag3" draggable="true" ondragstart="drag(event)">3. Gerenciamento de Relacionamento</p>
+                <p>4. Gerenciamento de Fornecedores</p>
+                <p>5. Ger. de Mudança Organizacional </p>
+                <p>6. Gerenciamento de Projeto </p>
+                <p>7. Gerenciamento Financeiro </p>
+                <p>8. Gerenciamento de Risco </p>
+                <p>9. Gerenciamento de Conhecimento </p>
+                <p>10. Ger. de Força de Trabalho e Talentos </p>
+                <p>11. Gerenciamento de Arquitetura</p>
+                <p>12. Gerenciamento de Segurança da Informação</p>
+                <p>13. Medição e Relatórios </p>
+                <p>14. Melhoria Contínua </p>
+            </div>
+            <div class="col-sm">
+                <p class="card-text">1. Análise de Negócio </p>
+                <p class="card-text">2. Projeto de Serviço</p>
+                <p class="card-text">3. Ger. de Catálogo de Serviço</p>
+                <p class="card-text">4. Gerenciamento de Nível de Serviço</p>
+                <p class="card-text">5. Ger. de Capacidade e Desempenho</p>
+                <p class="card-text">6. Gerenciamento de Disponibilidade</p>
+                <p class="card-text">7. Ger. de Continuidade de Serviço</p>
+                <p class="card-text">8. Controle de Mudanças</p>
+                <p class="card-text">9. Gerenciamento de Ativos de TI</p>
+                <p class="card-text">10. Gerenciamento de Configuração</p>
+                <p class="card-text">11. Gerenciamento de Liberações</p>
+                <p class="card-text">12. Monitoramento e Ger. de Eventos</p>
+                <p class="card-text">13. Gerenciamento de Incidentes</p>
+                <p class="card-text">14. Gerenciamento de Problemas</p>
+                <p class="card-text">15. Ger. de Requisições de Serviço</p>
+                <p class="card-text">16. Central de Serviços</p>
+                <p class="card-text">17. Validação e Testes de Serviço</p>
+            </div>
+
+            <div class="col-sm">
+                <p class="card-text">1. Desenvolvimento e Gerenciamento de Software </p>
+                <p class="card-text">2. Gerenciamento de Infraestrutura e Plataformas</p>
+                <p class="card-text">3. Gerenciamento de Implantação</p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card mb-3" style="max-width: 19rem;">
+                    <div class="card-header text-bold text-white" style="background-color: #3ab7c9;">Práticas de
+                        Gerenciamento Geral</div>
+                    <div id="ger-geral" ondrop="drop(event,this)" ondragover="allowDrop(event)" class="card-body"
+                        style="background-color: #d5e6ed;">
+                        <p class="card-text"> &nbsp;</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mb-3" style="max-width: 19rem;">
+                    <div class="card-header text-bold text-white" style="background-color: #f0700a;">Práticas de Ger. de
+                        Serviços</div>
+                    <div id="ger-servicos" class="card-body" style="background-color: #fbdad1;">
+                        <p class="card-text"> &nbsp;</p>
+                        <p class="card-text"> &nbsp;</p>
+                        <p class="card-text"> &nbsp;</p>
+                        <p class="card-text"> &nbsp;</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card mb-3" style="max-width: 19rem;">
+                    <div class="card-header text-bold text-white" style="background-color: #ccd97f;">Práticas de
+                        Gerenciamento Técnico</div>
+                    <div id="ger-tecnico" class="card-body" style="background-color: #e5eed1;">
+                        <p class="card-text"> &nbsp;</p>
+                        <p class="card-text"> &nbsp;</p>
+                        <p class="card-text"> &nbsp;</p>
+                        <p class="card-text"> &nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
