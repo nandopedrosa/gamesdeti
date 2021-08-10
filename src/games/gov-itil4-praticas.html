@@ -2,136 +2,223 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Hello, world!</title>
-    <style>
-        p {
-            margin-bottom: 4px !important;
-            font-size: 0.9rem;
-        }
 
-        .card-body {
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-    </style>
-    <script>
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
-  
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
 
-        function drop(ev, el) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            el.appendChild(document.getElementById(data));
-        }
 
-    
-    </script>
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
 </head>
 
 <body>
 
-    <div class="container mt-5">
-        <div id="praticas"  class="row mb-5">
-            <div class="col-sm" ondrop="drop(event,this)" ondragover="allowDrop(event)">
-                <h5 id="drag1" draggable="true" ondragstart="drag(event)">
-                    <span  class="badge badge-secondary">  Gerenciamento da Estratégia</span>
-                </h5>
-                
-                <h5 id="drag2" draggable="true" ondragstart="drag(event)">
-                    <span  class="badge badge-secondary">  Gerenciamento de Portfólio</span>
-                </h5>
-                      
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
 
-                <p id="drag3" draggable="true" ondragstart="drag(event)">3. Gerenciamento de Relacionamento</p>
-                <p>4. Gerenciamento de Fornecedores</p>
-                <p>5. Ger. de Mudança Organizacional </p>
-                <p>6. Gerenciamento de Projeto </p>
-                <p>7. Gerenciamento Financeiro </p>
-                <p>8. Gerenciamento de Risco </p>
-                <p>9. Gerenciamento de Conhecimento </p>
-                <p>10. Ger. de Força de Trabalho e Talentos </p>
-                <p>11. Gerenciamento de Arquitetura</p>
-                <p>12. Gerenciamento de Segurança da Informação</p>
-                <p>13. Medição e Relatórios </p>
-                <p>14. Melhoria Contínua </p>
-            </div>
-            <div class="col-sm">
-                <p class="card-text">1. Análise de Negócio </p>
-                <p class="card-text">2. Projeto de Serviço</p>
-                <p class="card-text">3. Ger. de Catálogo de Serviço</p>
-                <p class="card-text">4. Gerenciamento de Nível de Serviço</p>
-                <p class="card-text">5. Ger. de Capacidade e Desempenho</p>
-                <p class="card-text">6. Gerenciamento de Disponibilidade</p>
-                <p class="card-text">7. Ger. de Continuidade de Serviço</p>
-                <p class="card-text">8. Controle de Mudanças</p>
-                <p class="card-text">9. Gerenciamento de Ativos de TI</p>
-                <p class="card-text">10. Gerenciamento de Configuração</p>
-                <p class="card-text">11. Gerenciamento de Liberações</p>
-                <p class="card-text">12. Monitoramento e Ger. de Eventos</p>
-                <p class="card-text">13. Gerenciamento de Incidentes</p>
-                <p class="card-text">14. Gerenciamento de Problemas</p>
-                <p class="card-text">15. Ger. de Requisições de Serviço</p>
-                <p class="card-text">16. Central de Serviços</p>
-                <p class="card-text">17. Validação e Testes de Serviço</p>
-            </div>
+    <main role="main">
 
-            <div class="col-sm">
-                <p class="card-text">1. Desenvolvimento e Gerenciamento de Software </p>
-                <p class="card-text">2. Gerenciamento de Infraestrutura e Plataformas</p>
-                <p class="card-text">3. Gerenciamento de Implantação</p>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card mb-3" style="max-width: 19rem;">
-                    <div class="card-header text-bold text-white" style="background-color: #3ab7c9;">Práticas de
-                        Gerenciamento Geral</div>
-                    <div id="ger-geral" ondrop="drop(event,this)" ondragover="allowDrop(event)" class="card-body"
-                        style="background-color: #d5e6ed;">
-                        <p class="card-text"> &nbsp;</p>
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">ITIL 4 - Práticas de Gerenciamento</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p>Práticas de Gerencimento é um conjunto de recursos organizacionais (pessoas, tecnologias,
+                            processos, etc.) destinado a executar um trabalho ou atingir um objetivo. Na ITIL 4, elas
+                            são classificadas em três categorias: Práticas de Gerenciamento Geral, Práticas de
+                            Gerenciamento de Serviços e Práticas de Gerenciamento Técnico.</p>
+                        <p>Associe cada prática à sua respectiva categoria.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="card mb-3" style="max-width: 19rem;">
-                    <div class="card-header text-bold text-white" style="background-color: #f0700a;">Práticas de Ger. de
-                        Serviços</div>
-                    <div id="ger-servicos" class="card-body" style="background-color: #fbdad1;">
-                        <p class="card-text"> &nbsp;</p>
-                        <p class="card-text"> &nbsp;</p>
-                        <p class="card-text"> &nbsp;</p>
-                        <p class="card-text"> &nbsp;</p>
+        </section>
 
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <div id="praticas" class="row mb-5">
+                    <div id="praticas1" class="col-sm" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="praticas2" class="col-sm" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="praticas3" class="col-sm" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: #3ab7c9;">Práticas de
+                                Gerenciamento Geral</div>
+                            <div id="ger-geral" ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="card-body" style="background-color: #d5e6ed;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: #f0700a;">Práticas de
+                                Ger. de Serviços</div>
+                            <div id="ger-servicos" ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="card-body" style="background-color: #fbdad1;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: #ccd97f;">Práticas de
+                                Gerenciamento Técnico</div>
+                            <div id="ger-tecnico" ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="card-body" style="background-color: #e5eed1;">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="card mb-3" style="max-width: 19rem;">
-                    <div class="card-header text-bold text-white" style="background-color: #ccd97f;">Práticas de
-                        Gerenciamento Técnico</div>
-                    <div id="ger-tecnico" class="card-body" style="background-color: #e5eed1;">
-                        <p class="card-text"> &nbsp;</p>
-                        <p class="card-text"> &nbsp;</p>
-                        <p class="card-text"> &nbsp;</p>
-                        <p class="card-text"> &nbsp;</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const praticas = [];
+        praticas.push({ nome: "Gerenciamento da Estratégia", cat: "ger-geral" });
+        praticas.push({ nome: "Gerenciamento de Portfólio", cat: "ger-geral" });
+        praticas.push({ nome: "Gerenciamento de Relacionamento", cat: "ger-geral" });
+        praticas.push({ nome: "Gerenciamento de Fornecedores", cat: "ger-geral" });
+        praticas.push({ nome: "Ger. de Mudança Organizacional", cat: "ger-geral" });
+        praticas.push({ nome: "Gerenciamento de Projeto", cat: "ger-geral" });
+        praticas.push({ nome: "Gerenciamento Financeiro", cat: "ger-geral" });
+        praticas.push({ nome: "Gerenciamento de Risco", cat: "ger-geral" });
+        praticas.push({ nome: "Gerenciamento de Conhecimento", cat: "ger-geral" });
+        praticas.push({ nome: "Ger. de Força de Trabalho e Talentos", cat: "ger-geral" });
+        praticas.push({ nome: "Gerenciamento de Arquitetura", cat: "ger-geral" });
+        praticas.push({ nome: "Ger. de Segurança da Informação", cat: "ger-geral" });
+        praticas.push({ nome: "Medição e Relatórios", cat: "ger-geral" });
+        praticas.push({ nome: "Melhoria Contínua", cat: "ger-geral" });
+
+        praticas.push({ nome: "Análise de Negócio", cat: "ger-serv" });
+        praticas.push({ nome: "Projeto de Serviço", cat: "ger-serv" });
+        praticas.push({ nome: "Ger. de Catálogo de Serviço", cat: "ger-serv" });
+        praticas.push({ nome: "Gerenciamento de Nível de Serviço", cat: "ger-serv" });
+        praticas.push({ nome: "Ger. de Capacidade e Desempenho", cat: "ger-serv" });
+        praticas.push({ nome: "Gerenciamento de Disponibilidade", cat: "ger-serv" });
+        praticas.push({ nome: "Ger. de Continuidade de Serviço", cat: "ger-serv" });
+        praticas.push({ nome: "Controle de Mudanças", cat: "ger-serv" });
+        praticas.push({ nome: "Gerenciamento de Ativos de TI", cat: "ger-serv" });
+        praticas.push({ nome: "Gerenciamento de Configuração", cat: "ger-serv" });
+        praticas.push({ nome: "Gerenciamento de Liberações", cat: "ger-serv" });
+        praticas.push({ nome: "Monitoramento e Ger. de Eventos", cat: "ger-serv" });
+        praticas.push({ nome: "Gerenciamento de Incidentes", cat: "ger-serv" });
+        praticas.push({ nome: "Gerenciamento de Problemas", cat: "ger-serv" });
+        praticas.push({ nome: "Ger. de Requisições de Serviço", cat: "ger-serv" });
+        praticas.push({ nome: "Central de Serviços", cat: "ger-serv" });
+        praticas.push({ nome: "Validação e Testes de Serviço", cat: "ger-serv" });
+
+        praticas.push({ nome: "Desenvolvimento e Ger. de Software", cat: "ger-tec" });
+        praticas.push({ nome: "Ger. de Infraestrutura e Plataformas", cat: "ger-tec" });
+        praticas.push({ nome: "Ger. de Implantação", cat: "ger-tec" });
+
+        const quantidadeDeItens = praticas.length;
+
+        var itemHtmlTemplate = '<h5 categoria="#CATEGORIA#" id="drag#INDEX#" draggable="true" ondragstart="drag(event)"> <span class="badge badge-secondary">#NOME#</span></h5>';
+
+        //Imprimindo na tela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(praticas);
+            praticas.splice(item.index, 1); //remove o item do array
+            var itemHtml = itemHtmlTemplate.replace("#INDEX#", i).replace("#CATEGORIA#", item.objeto.cat).replace("#NOME#", item.objeto.nome);
+
+            if (i <= 11) {
+                $("#praticas1").append(itemHtml);
+            } else if (i >= 12 && i <= 22) {
+                $("#praticas2").append(itemHtml);
+            } else {
+                $("#praticas3").append(itemHtml);
+            }
+        }
+        //Função de enviar a resposta
+        function enviar() {
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada.')
+
+            //Checamos se o usuário enviou todas as respostas
+            if ($("#praticas h5").children().length > 0); {
+                respostaCerta = false;
+                $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+            }
+
+            $('#ger-geral').children('h5').each(function () {
+                if ($(this).attr('categoria') !== 'ger-geral')
+                    respostaCerta = false;
+            });
+
+            $('#ger-servicos').children('h5').each(function () {
+                if ($(this).attr('categoria') !== 'ger-serv')
+                    respostaCerta = false;
+            });
+
+            $('#ger-tecnico').children('h5').each(function () {
+                if ($(this).attr('categoria') !== 'ger-tec')
+                    respostaCerta = false;
+            });
+            
+            respostaCerta = true;
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
 </body>
 
 </html>
