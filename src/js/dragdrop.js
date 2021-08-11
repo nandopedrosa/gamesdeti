@@ -11,3 +11,4 @@ function drop(ev, el) {
     var data = ev.dataTransfer.getData("text");
     el.appendChild(document.getElementById(data));
 }
+

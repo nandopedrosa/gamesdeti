@@ -1,5 +1,5 @@
- //Busca um item aleatorio em um array. Retorna o item e seu índice
- function getRandomItem(arrayDeItens) {
+//Busca um item aleatorio em um array. Retorna o item e seu índice
+function getRandomItem(arrayDeItens) {
     //Numero aleatorio entre 0 e o último item do array
     const index = Math.floor(Math.random() * ((arrayDeItens.length - 1) + 1)) + 0
     const item = arrayDeItens[index];
@@ -13,5 +13,6 @@ function estouComSorte() {
 
     const game = getRandomItem(games).objeto;
 
-
+    window.location.href = "/src/games/" + game + ".html";
 }
+

@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <p></p>
-                        <p>Práticas de Gerencimento é um conjunto de recursos organizacionais (pessoas, tecnologias,
+                        <p class="text-justify">Uma "Prática de Gerenciamento" na ITIL 4 representa um conjunto de recursos organizacionais (pessoas, tecnologias,
                             processos, etc.) destinado a executar um trabalho ou atingir um objetivo. Na ITIL 4, elas
                             são classificadas em três categorias: Práticas de Gerenciamento Geral, Práticas de
                             Gerenciamento de Serviços e Práticas de Gerenciamento Técnico.</p>
@@ -57,12 +57,12 @@
         <!-- ======= Início do Game ======= -->
         <section class="bg-light pt-1 pb-4">
             <div class="container mt-4">
-                <div id="praticas" class="row mb-5">
-                    <div id="praticas1" class="col-sm" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                <div id="praticas" style="min-height:100px"  class="row mb-5">
+                    <div id="praticas1" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
                     </div>
-                    <div id="praticas2" class="col-sm" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    <div id="praticas2" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
                     </div>
-                    <div id="praticas3" class="col-sm" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    <div id="praticas3" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
                     </div>
                 </div>
 
@@ -119,6 +119,9 @@
 
     <!-- Funções utilitárias -->
     <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
 
     <!-- Script do Game -->
     <script>
@@ -181,11 +184,18 @@
         }
         //Função de enviar a resposta
         function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
             var respostaCerta = true;
-            $('#texto-resposta-errada').text('Deu ruim, resposta errada.')
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
 
             //Checamos se o usuário enviou todas as respostas
-            if ($("#praticas h5").children().length > 0); {
+            if ($("#praticas h5").children().length > 0) {
                 respostaCerta = false;
                 $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
             }
@@ -204,8 +214,7 @@
                 if ($(this).attr('categoria') !== 'ger-tec')
                     respostaCerta = false;
             });
-            
-            respostaCerta = true;
+
 
             if (!respostaCerta) {
                 $('#resposta-errada').modal('show');
@@ -215,9 +224,6 @@
         }
     </script>
     <!-- Fim do script do game -->
-
-    <!-- Telas Modais -->
-    <script>HTMLImporter.import("../modais-template.html");</script>
 
 </body>
 

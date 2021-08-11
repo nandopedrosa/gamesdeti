@@ -96,4 +96,17 @@
 
 .badge {
   font-weight: 300 !important;
+  text-align:left !important;
+}
+
+.cobit-bg-dark-blue {
+  background-color: #1d2543;
+}
+
+.cobit-bg-light-blue {
+  background-color: #5f5e7a;
+}
+
+#container-dominios-gerenciamento h5 {
+  display: inline !important;
 }

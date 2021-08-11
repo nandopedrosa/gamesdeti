@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">PMBOK 6 - processos de Gerenciamento de Projetos</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">O PMBOK 6 agrupa 49 processos em 10 áreas de conhecimento e 5 grupos de processo.</p>
+                        <p>Associe cada processo de gerenciamento de projeto ao seu respectivo grupo de processo e área de conhecimento.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <div id="processos" style="min-height:100px" class="row mb-5">
+
+                    <div id="processos1" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="processos2" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="processos3" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="processos4" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                </div>
+
+                <table class="table table-bordered  ">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center; vertical-align:middle" rowspan=2 scope="col">Área</th>
+                            <th style="text-align:center" colspan=5 scope="col">
+                                Grupos de Processos
+                            </th>
+                        </tr>
+                        <tr>
+                            
+                            <th style="text-align:center;" scope="col">Iniciação</th>
+                            <th scope="col" style="text-align:center;">Planejamento</th>
+                            <th scope="col" style="text-align:center;">Execução</th>
+                            <th scope="col" style="text-align:center;">Mon. e Controle</th>
+                            <th scope="col" style="text-align:center;">Encerramento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Integração</th>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Escopo</th>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cronograma</th>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Custos</th>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Qualidade</th>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Recursos</th>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Comunicações</th>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Riscos</th>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Aquisições</th>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Stakeholders</th>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+
+            </div>
+
+
+
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const processos = [];
+        processos.push({ nome: "Desenvolver o termo <br>de abertura do projeto", area: "integração", codArea:1, grupo: "Iniciação", codGrupo:1 });
+        processos.push({ nome: "Desenvolver o plano <br>de gerenciamento do projeto", area: "integração", codArea:1, grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Orientar e gerenciar <br>o trabalho do projeto", area: "integração", codArea:1, grupo: "Execução", codGrupo:3});
+        processos.push({ nome: "Gerenciar o conhecimento <br>do projeto", area: "integração", codArea:1, grupo: "Execução", codGrupo:3 });
+        processos.push({ nome: "Monitorar e controlar o <br>trabalho do projeto", area: "integração", codArea:1, grupo: "Monitoramento e Controle", codGrupo:4 });
+        processos.push({ nome: "Realizar o controle <br>integrado de mudanças", area: "integração", codArea:1, grupo: "Monitoramento e Controle", codGrupo:4 });
+        processos.push({ nome: "Encerrar o projeto ou fase", area: "integração", codArea:1, grupo: "Encerramento", codGrupo:5 });
+
+        processos.push({ nome: "Planejar o gerenciamento<br> do escopo", area: "escopo", codArea:2, grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Coletar os requisitos", area: "escopo", codArea:2, grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Definir o escopo", area: "escopo", codArea:2, grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Criar a EAP", area: "escopo", codArea:2, grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Validar o escopo", area: "escopo", codArea:2, grupo: "Monitoramento e Controle", codGrupo:4 });
+        processos.push({ nome: "Controlar o escopo", area: "escopo", codArea:2, grupo: "Monitoramento e Controle", codGrupo:4 });
+
+
+        processos.push({ nome: "Planejar o gerenciamento<br> do cronograma", area: "cronograma", codArea:3,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Definir as atividades", area: "cronograma", codArea:3,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Sequenciar as atividades", area: "cronograma", codArea:3,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Estimar a duração da atividade", area: "cronograma", codArea:3,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Desenvolver o cronograma", area: "cronograma", codArea:3,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Controlar o cronograma", area: "cronograma", codArea:3,  grupo: "Monitoramento e Controle", codGrupo:4 });
+
+
+        processos.push({ nome: "Planejar o gerenciamento<br> dos custos", area: "custos", codArea:4,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Estimar os custos", area: "custos", codArea:4,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Determinar o orçamento", area: "custos", codArea:4,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Controlar os custos", area: "custos", codArea:4,  grupo: "Monitoramento e Controle", codGrupo:4 });
+
+
+        processos.push({ nome: "Planejar o gerenciamento <br> da qualidade", area: "qualidade", codArea:5,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Gerenciar a qualidade", area: "qualidade", codArea:5,  grupo: "Execução", codGrupo:3 });
+        processos.push({ nome: "Controlar a qualidade", area: "qualidade", codArea:5,  grupo: "Monitoramento e Controle", codGrupo:4 });
+
+
+        processos.push({ nome: "Planejar o gerenciamento<br> dos recursos", area: "recursos", codArea:6,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Estimar os recursos da atividade", area: "recursos", codArea:6, grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Adquirir recursos", area: "recursos", codArea:6, grupo: "Execução", codGrupo:3 });
+        processos.push({ nome: "Desenvolver a equipe", area: "recursos", codArea:6, grupo: "Execução", codGrupo:3 });
+        processos.push({ nome: "Gerenciar a equipe", area: "recursos", codArea:6, grupo: "Execução", codGrupo:3 });
+        processos.push({ nome: "Controlar os recursos", area: "recursos", codArea:6, grupo: "Monitoramento e Controle", codGrupo:4 });
+
+        processos.push({ nome: "Planejar o gerenciamento<br> das comunicações", area: "comunicações", codArea:7,  codArea:7,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Gerenciar as comunicações", area: "comunicações", codArea:7,  grupo: "Execução", codGrupo:3 });
+        processos.push({ nome: "Monitorar as comunicações", area: "comunicações", codArea:7,  grupo: "Monitoramento e Controle", codGrupo:4 });
+
+        processos.push({ nome: "Planejar o gerenciamento<br> dos riscos", area: "riscos", codArea:8,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Identificar os riscos", area: "riscos", codArea:8,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Realizar a análise <br>qualitativa dos riscos", area: "riscos", codArea:8,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Realizar a análise<br> quantitativa dos riscos", area: "riscos", codArea:8,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Planejar as respostas <br>aos riscos", area: "riscos", codArea:8,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Implementar respostas<br> aos riscos", area: "riscos", codArea:8,  grupo: "Execução", codGrupo:3 });
+        processos.push({ nome: "Monitorar os riscos", area: "riscos", codArea:8,  grupo: "Monitoramento e Controle", codGrupo:4 });
+
+        processos.push({ nome: "Planejar o gerenciamento<br> das aquisições", area: "aquisições", codArea:9,  grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Conduzir as aquisições", area: "aquisições", codArea:9,  grupo: "Execução", codGrupo:3 });
+        processos.push({ nome: "Controlar as aquisições", area: "aquisições", codArea:9,  grupo: "Monitoramento e Controle", codGrupo:4 });
+
+
+        processos.push({ nome: "Identificar as partes<br> interessadas", area: "partes interessadas", codArea:10, grupo: "Iniciação", codGrupo:1 });
+        processos.push({ nome: "Planejar o engajamento<br> das partes interessadas", area: "partes interessadas", codArea:10, grupo: "Planejamento", codGrupo:2 });
+        processos.push({ nome: "Gerenciar o engajamento <br>das partes interessadas", area: "partes interessadas", codArea:10, grupo: "Execução", codGrupo:3 });
+        processos.push({ nome: "Monitorar o engajamento <br>das partes interessadas", area: "partes interessadas", codArea:10, grupo: "Monitoramento e Controle", codGrupo:4 });
+
+
+        const quantidadeDeItens = processos.length;
+
+        var itemHtmlTemplate = '<h5 cod-area="#COD-AREA#", cod-grupo="#COD-GRUPO#", id="drag#INDEX#" draggable="true" ondragstart="drag(event)"> <span style="font-size:65%;" class="mt-1 mr-1 ml-1 badge badge-secondary">#NOME#</span></h5>';
+
+        //Imprimindo na tela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(processos);
+            processos.splice(item.index, 1); //remove o item do array
+            var itemHtml = itemHtmlTemplate
+                           .replace("#INDEX#", i)
+                           .replace("#COD-AREA#", item.objeto.codArea)
+                           .replace("#COD-GRUPO#", item.objeto.codGrupo)
+                           .replace("#NOME#", item.objeto.nome);
+
+            if (i <= 12) {
+                $("#processos1").append(itemHtml);
+            } else if (i >= 13 && i <= 24) {
+                $("#processos2").append(itemHtml);
+            } else if (i >= 25 && i <= 37) {
+                $("#processos3").append(itemHtml);
+            }
+             else {
+                $("#processos4").append(itemHtml);
+            }
+        }
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            //Checamos se o usuário enviou todas as respostas
+            if ($("#processos h5").children().length > 0) {
+                respostaCerta = false;
+                $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+            }
+
+            
+            $('tbody  > tr').each(function(codArea) {
+                $(this).children("td").each(function(index){
+                    $(this).children('h5').each(function(){
+                        if ($(this).attr('cod-area') !== (codArea+1).toString()) {
+                            respostaCerta = false;
+                        }
+                        
+                        if ($(this).attr('cod-grupo') !== (index+1).toString()) {
+                            respostaCerta = false;
+                        }                        
+                    });
+                });                
+            });
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>

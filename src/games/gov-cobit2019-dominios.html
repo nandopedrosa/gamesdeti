@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">COBIT 2019 - Objetivos de Governança e Gerenciamento</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">No COBIT 2019, para a I&T contribuir para o alcance de metas de negócio, <strong>objetivos de governança e gerenciamento</strong> devem ser definidos. Um objetivo de governança ou gerenciamento sempre se relaciona a um processo (geralmente de nome idêntico) e outros componentes para atingir seu objetivo. A diretoria e gerência executiva são responsáveis pelos processos de  governança, enquanto a gerência “média” é responsável pelos processos de gerenciamento.</p>
+                        <p>Associe cada objetivo de Governança ou Gerenciamento ao seu respectivo Domínio.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">                
+                <div id="objetivos" style="min-height:100px" class="row mb-5">
+                    
+                    <div  id="objetivos1" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div  id="objetivos2" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div  id="objetivos3" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                </div>
+
+                <div ondrop="drop(event,this)" ondragover="allowDrop(event)" id="EDM" class="row cobit-bg-dark-blue rounded" style="height:170px">
+                    <div class="col-md-12">
+                        <p class="text-white" style="padding-top:35px; font-size:0.8rem">EDM -Avaliar, Direcionar e Monitorar</p>
+                    </div>
+                </div>
+                <div class="row " style="height:10px">
+                    <div class="col-md-12">
+                    </div>
+                </div>
+                <div id="container-dominios-gerenciamento" class="row cobit-bg-dark-blue rounded" style="height:600px">           
+                    <div class="col-md-1">
+                        <div class="row " style="height:10px">
+                            <div class="col-md-12">                                
+                            </div>
+                        </div>
+                        <div  class="row " style="height:200px">
+                            <div class="col-md-12">
+                                   <p class="text-white" style="padding-top:35px; font-size:0.8rem">APO - Alinhar, Planejar e Organizar</p>
+                            </div>
+                        </div>
+                        <div class="row " style="height:200px">
+                            <div class="col-md-12">
+                                   <p class="text-white" style="padding-top:35px; font-size:0.8rem">BAI - Construir, Adquirir e Implementar</p>
+                            </div>
+                        </div>
+                        <div class="row " style="height:150px">
+                            <div class="col-md-12">
+                                <p class="text-white" style="padding-top:25px; font-size:0.8rem">DSS - Entregar, Servir e Suportar</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+               
+                    <div class="col-md-8 ">
+                        <div class="row " style="height:10px">
+                            <div class="col-md-12">
+                            </div>
+                        </div>
+                        <div id="APO" class="row"  style="height:200px">                               
+                            <div ondrop="drop(event,this)" ondragover="allowDrop(event)" class="col-md-12 cobit-bg-light-blue rounded" style="max-height:200px" >
+                            </div>
+                        </div>
+                        <div class="row " style="height:10px">
+                            <div class="col-md-12">
+                            </div>
+                        </div>
+                        <div id="BAI"  class="row" style="height:200px">
+                            <div ondrop="drop(event,this)" ondragover="allowDrop(event)" class="col-md-12 cobit-bg-light-blue rounded" style="max-height:200px">
+                            </div>
+                        </div>
+                        <div class="row " style="height:10px">
+                            <div class="col-md-12">
+                            </div>
+                        </div>
+                        <div id="DSS"  class="row" style="height:150px">
+                            <div ondrop="drop(event,this)" ondragover="allowDrop(event)" class="col-md-12 cobit-bg-light-blue rounded" style="max-height:150px"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                   
+                    <div ondrop="drop(event,this)" ondragover="allowDrop(event)" id="MEA" class="col-md-2 cobit-bg-light-blue rounded" style="margin-left: -30px; margin-top:10px; margin-bottom: 10px; max-height:570px">
+                        <p class="text-white" style="padding-top:35px; font-size:0.8rem">MEA - Monitorar, Analisar e Avaliar</p>
+                    </div>
+                </div>
+
+               
+            </div>
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const objetivos = [];
+        objetivos.push({ nome: "Estabelecimento e Manutenção <br>do Framework de Governança<br> Assegurados", cat: "edm" });
+        objetivos.push({ nome: "Entrega de Benefícios Assegurada", cat: "edm" });
+        objetivos.push({ nome: "Otimização de Riscos Assegurada", cat: "edm" });
+        objetivos.push({ nome: "Otimização de Recursos Assegurada", cat: "edm" });
+        objetivos.push({ nome: "Engajamento das Partes Interessadas<br> Assegurado", cat: "edm" });
+
+        objetivos.push({ nome: "Framework de Gestão de TI Gerenciado", cat: "apo" });
+        objetivos.push({ nome: "Estratégia Gerenciada", cat: "apo" });
+        objetivos.push({ nome: "Arquitetura Corporativa Gerenciada", cat: "apo" });
+        objetivos.push({ nome: "Inovação Gerenciada", cat: "apo" });
+        objetivos.push({ nome: "Portfólio Gerenciado", cat: "apo" });
+        objetivos.push({ nome: "Custos e Orçamento Gerenciados ", cat: "apo" });
+        objetivos.push({ nome: "Recursos Humanos Gerenciados", cat: "apo" });
+        objetivos.push({ nome: "Relações Gerenciadas", cat: "apo" });
+        objetivos.push({ nome: "Acordos de Serviço Gerenciados", cat: "apo" });
+        objetivos.push({ nome: "Fornecedores Gerenciados", cat: "apo" });
+        objetivos.push({ nome: "Qualidade Gerenciada", cat: "apo" });
+        objetivos.push({ nome: "Risco Gerenciado", cat: "apo" });
+        objetivos.push({ nome: "Segurança Gerenciada", cat: "apo" });
+        objetivos.push({ nome: "Dados Gerenciados", cat: "apo" });
+
+        objetivos.push({ nome: "Programas Gerenciados", cat: "bai" });
+        objetivos.push({ nome: "Definição de Requisitos Gerenciada", cat: "bai" });
+        objetivos.push({ nome: "Identificação e Construção<br> de Soluções Gerenciadas", cat: "bai" });
+        objetivos.push({ nome: "Disponibilidade e Capacidade<Br> Gerenciadas", cat: "bai" });
+        objetivos.push({ nome: "Mudança Organizacional Gerenciada", cat: "bai" });
+        objetivos.push({ nome: "Mudanças de TI Gerenciadas", cat: "bai" });
+        objetivos.push({ nome: "Aceite e Transição de Mudança<br> Gerenciados", cat: "bai" });
+        objetivos.push({ nome: "Gerenciar Conhecimento", cat: "bai" });
+        objetivos.push({ nome: "Ativos Gerenciados", cat: "bai" });        
+        objetivos.push({ nome: "Configuração Gerenciada", cat: "bai" });
+        objetivos.push({ nome: "Projetos Gerenciados", cat: "bai" });
+        
+        objetivos.push({ nome: "Operações Gerenciadas", cat: "dss" });
+        objetivos.push({ nome: "Requisições de Serviço e<br> Incidentes Gerenciados", cat: "dss" });
+        objetivos.push({ nome: "Problemas Gerenciados", cat: "dss" });
+        objetivos.push({ nome: "Continuidade Gerenciada", cat: "dss" });
+        objetivos.push({ nome: "Serviços de Segurança Gerenciados ", cat: "dss" });
+        objetivos.push({ nome: "Controles de Processos de Negócio<br> Gerenciados ", cat: "dss" });
+      
+        objetivos.push({ nome: "Desempenho e Conformidade<br> Gerenciados", cat: "mea" });
+        objetivos.push({ nome: "Sistema de Controles Internos<br> Gerenciado", cat: "mea" });
+        objetivos.push({ nome: "Conformidade com Regulamentos<br> Externos Gerenciada", cat: "mea" });
+        objetivos.push({ nome: "Garantias Gerenciadas", cat: "mea" });
+
+        const quantidadeDeItens = objetivos.length;
+
+        var itemHtmlTemplate = '<h5 categoria="#CATEGORIA#" id="drag#INDEX#" draggable="true" ondragstart="drag(event)"> <span style="font-size:65%;" class="mt-1 mr-1 ml-1 badge badge-secondary">#NOME#</span></h5>';
+
+        //Imprimindo na tela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(objetivos);
+            objetivos.splice(item.index, 1); //remove o item do array
+            var itemHtml = itemHtmlTemplate.replace("#INDEX#", i).replace("#CATEGORIA#", item.objeto.cat).replace("#NOME#", item.objeto.nome);
+
+            if (i <= 13) {
+                $("#objetivos1").append(itemHtml);
+            } else if (i >= 14 && i <= 27) {
+                $("#objetivos2").append(itemHtml);
+            } else {
+                $("#objetivos3").append(itemHtml);
+            }
+        }
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            //Checamos se o usuário enviou todas as respostas
+            if ($("#objetivos h5").children().length > 0) {
+                respostaCerta = false;
+                $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+            }
+
+            $('#EDM').children('h5').each(function () {
+                if ($(this).attr('categoria') !== 'edm')
+                    respostaCerta = false;
+            });
+
+            $('#APO').children('h5').each(function () {
+                if ($(this).attr('categoria') !== 'apo')
+                    respostaCerta = false;
+            });
+
+            $('#BAI').children('h5').each(function () {
+                if ($(this).attr('categoria') !== 'bai')
+                    respostaCerta = false;
+            });
+
+            $('#DSS').children('h5').each(function () {
+                if ($(this).attr('categoria') !== 'dss')
+                    respostaCerta = false;
+            });
+
+            $('#MEA').children('h5').each(function () {
+                if ($(this).attr('categoria') !== 'mea')
+                    respostaCerta = false;
+            });
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>
