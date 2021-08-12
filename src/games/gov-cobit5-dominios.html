@@ -35,14 +35,17 @@
             <div class="container mt-4 mb-4">
                 <div class="row">
                     <div class="col-sm">
-                        <h3 class="font-weight-light">COBIT 2019 - Objetivos de Governança e Gerenciamento</h3>
+                        <h3 class="font-weight-light">COBIT 5 - Processos de Governança e Gerenciamento</h3>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm">
                         <p></p>
-                        <p class="text-justify">No COBIT 2019, para a I&T contribuir para o alcance de metas de negócio, <strong>objetivos de governança e gerenciamento</strong> devem ser definidos. Um objetivo de governança ou gerenciamento sempre se relaciona a um processo (geralmente de nome idêntico) e outros componentes para atingir seu objetivo. A diretoria e gerência executiva são responsáveis pelos processos de  governança, enquanto a gerência “média” é responsável pelos processos de gerenciamento.</p>
-                        <p>Associe cada objetivo de Governança ou Gerenciamento ao seu respectivo Domínio.</p>
+                        <p class="text-justify">No COBIT 5, processos são uma coleção de práticas influenciadas pelas
+                            políticas da organização e recebem entradas de outras fontes (inclusive de outros
+                            processos). Eles manipulam as entradas e produzem saídas (produtos, serviços, etc.). O COBIT
+                            5 possui 37 processos distribuídos em 5 domínios.</p>
+                        <p>Associe os processos aos seus respectivos domínios</p>
                         <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
                             Enviar Resposta</button>
                     </div>
@@ -53,87 +56,98 @@
 
         <!-- ======= Início do Game ======= -->
         <section class="bg-light pt-1 pb-4">
-            <div class="container mt-4">                
+            <div class="container mt-4">
                 <div id="objetivos" style="min-height:100px" class="row mb-5">
-                    
-                    <div  id="objetivos1" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+
+                    <div id="objetivos1" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
                     </div>
-                    <div  id="objetivos2" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    <div id="objetivos2" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
                     </div>
-                    <div  id="objetivos3" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    <div id="objetivos3" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
                     </div>
-                    <div  id="objetivos4" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    <div id="objetivos4" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
                     </div>
                 </div>
 
-                <div ondrop="drop(event,this)" ondragover="allowDrop(event)" id="EDM" class="row cobit-bg-dark-blue rounded" style="height:170px">
+                <div ondrop="drop(event,this)" ondragover="allowDrop(event)" id="EDM"
+                    class="row cobit-bg-dark-blue rounded" style="height:170px">
                     <div class="col-md-12">
-                        <p class="text-white" style="padding-top:35px; font-size:0.8rem">EDM -Avaliar, Direcionar e Monitorar</p>
+                        <p class="text-white" style="padding-top:35px; font-size:0.8rem">EDM -Avaliar, Dirigir e
+                            Monitorar</p>
                     </div>
                 </div>
                 <div class="row " style="height:10px">
                     <div class="col-md-12">
                     </div>
                 </div>
-                <div id="container-dominios-gerenciamento" class="row cobit-bg-dark-blue rounded" style="height:600px">           
+                <div id="container-dominios-gerenciamento" class="row cobit-bg-dark-blue rounded" style="height:600px">
                     <div class="col-md-1">
                         <div class="row " style="height:10px">
-                            <div class="col-md-12">                                
-                            </div>
-                        </div>
-                        <div  class="row " style="height:200px">
                             <div class="col-md-12">
-                                   <p class="text-white" style="padding-top:35px; font-size:0.8rem">APO - Alinhar, Planejar e Organizar</p>
                             </div>
                         </div>
                         <div class="row " style="height:200px">
                             <div class="col-md-12">
-                                   <p class="text-white" style="padding-top:35px; font-size:0.8rem">BAI - Construir, Adquirir e Implementar</p>
+                                <p class="text-white" style="padding-top:35px; font-size:0.8rem">APO - Alinhar, Planejar
+                                    e Organizar</p>
+                            </div>
+                        </div>
+                        <div class="row " style="height:200px">
+                            <div class="col-md-12">
+                                <p class="text-white" style="padding-top:35px; font-size:0.8rem">BAI - Construir,
+                                    Adquirir e Implementar</p>
                             </div>
                         </div>
                         <div class="row " style="height:150px">
                             <div class="col-md-12">
-                                <p class="text-white" style="padding-top:25px; font-size:0.8rem">DSS - Entregar, Servir e Suportar</p>
+                                <p class="text-white" style="padding-top:25px; font-size:0.8rem">DSS - Entregar, Servir
+                                    e Suportar</p>
                             </div>
                         </div>
                     </div>
-                    
-               
+
+
                     <div class="col-md-8 ">
                         <div class="row " style="height:10px">
                             <div class="col-md-12">
                             </div>
                         </div>
-                        <div id="APO" class="row"  style="height:200px">                               
-                            <div ondrop="drop(event,this)" ondragover="allowDrop(event)" class="col-md-12 cobit-bg-light-blue rounded" style="max-height:200px" >
+                        <div id="APO" class="row" style="height:200px">
+                            <div ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="col-md-12 cobit-bg-light-blue rounded" style="max-height:200px">
                             </div>
                         </div>
                         <div class="row " style="height:10px">
                             <div class="col-md-12">
                             </div>
                         </div>
-                        <div id="BAI"  class="row" style="height:200px">
-                            <div ondrop="drop(event,this)" ondragover="allowDrop(event)" class="col-md-12 cobit-bg-light-blue rounded" style="max-height:200px">
+                        <div id="BAI" class="row" style="height:200px">
+                            <div ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="col-md-12 cobit-bg-light-blue rounded" style="max-height:200px">
                             </div>
                         </div>
                         <div class="row " style="height:10px">
                             <div class="col-md-12">
                             </div>
                         </div>
-                        <div id="DSS"  class="row" style="height:150px">
-                            <div ondrop="drop(event,this)" ondragover="allowDrop(event)" class="col-md-12 cobit-bg-light-blue rounded" style="max-height:150px"> 
+                        <div id="DSS" class="row" style="height:150px">
+                            <div ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="col-md-12 cobit-bg-light-blue rounded" style="max-height:150px">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-1">
                     </div>
-                   
-                    <div ondrop="drop(event,this)" ondragover="allowDrop(event)" id="MEA" class="col-md-2 cobit-bg-light-blue rounded" style="margin-left: -30px; margin-top:10px; margin-bottom: 10px; max-height:570px">
-                        <p class="text-white" style="padding-top:35px; font-size:0.8rem">MEA - Monitorar, Analisar e Avaliar</p>
+
+                    <div ondrop="drop(event,this)" ondragover="allowDrop(event)" id="MEA"
+                        class="col-md-2 cobit-bg-light-blue rounded"
+                        style="margin-left: -30px; margin-top:10px; margin-bottom: 10px; max-height:570px">
+                        <p class="text-white" style="padding-top:35px; font-size:0.8rem">MEA - Monitorar, Analisar e
+                            Medir</p>
                     </div>
                 </div>
 
-               
+
             </div>
         </section>
     </main>
@@ -163,50 +177,47 @@
     <script>
         //Carregando as práticas em um array
         const objetivos = [];
-        objetivos.push({ nome: "Estabelecimento e Manutenção <br>do Framework de Governança<br> Assegurados", cat: "edm" });
-        objetivos.push({ nome: "Entrega de Benefícios Assegurada", cat: "edm" });
-        objetivos.push({ nome: "Otimização de Riscos Assegurada", cat: "edm" });
-        objetivos.push({ nome: "Otimização de Recursos Assegurada", cat: "edm" });
-        objetivos.push({ nome: "Engajamento das Partes Interessadas<br> Assegurado", cat: "edm" });
+        objetivos.push({ nome: "Assegurar o Estabelecimento <Br>e Manutenção do Framework de Governança ", cat: "edm" });
+        objetivos.push({ nome: "Assegurar a Entrega de Benefícios", cat: "edm" });
+        objetivos.push({ nome: "Assegurar a Otimização de Riscos", cat: "edm" });
+        objetivos.push({ nome: "Assegurar a Otimização de Recursos", cat: "edm" });
+        objetivos.push({ nome: "Assegurar a Transparência<br> para as partes interessadas", cat: "edm" });
 
-        objetivos.push({ nome: "Framework de Gestão de TI Gerenciado", cat: "apo" });
-        objetivos.push({ nome: "Estratégia Gerenciada", cat: "apo" });
-        objetivos.push({ nome: "Arquitetura Corporativa Gerenciada", cat: "apo" });
-        objetivos.push({ nome: "Inovação Gerenciada", cat: "apo" });
-        objetivos.push({ nome: "Portfólio Gerenciado", cat: "apo" });
-        objetivos.push({ nome: "Custos e Orçamento Gerenciados ", cat: "apo" });
-        objetivos.push({ nome: "Recursos Humanos Gerenciados", cat: "apo" });
-        objetivos.push({ nome: "Relações Gerenciadas", cat: "apo" });
-        objetivos.push({ nome: "Acordos de Serviço Gerenciados", cat: "apo" });
-        objetivos.push({ nome: "Fornecedores Gerenciados", cat: "apo" });
-        objetivos.push({ nome: "Qualidade Gerenciada", cat: "apo" });
-        objetivos.push({ nome: "Risco Gerenciado", cat: "apo" });
-        objetivos.push({ nome: "Segurança Gerenciada", cat: "apo" });
-        objetivos.push({ nome: "Dados Gerenciados", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar o Framework de Gestão de TI", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar a Estratégia", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar a Arquitetura Corporativa", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar Inovação", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar Portfólio", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar Orçamento e Custos", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar Recursos Humanos", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar as Relações", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar os Acordos de Serviço", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar os Fornecedores", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar a Qualidade", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar os Riscos", cat: "apo" });
+        objetivos.push({ nome: "Gerenciar a Segurança", cat: "apo" });
 
-        objetivos.push({ nome: "Programas Gerenciados", cat: "bai" });
-        objetivos.push({ nome: "Definição de Requisitos Gerenciada", cat: "bai" });
-        objetivos.push({ nome: "Identificação e Construção<br> de Soluções Gerenciadas", cat: "bai" });
-        objetivos.push({ nome: "Disponibilidade e Capacidade<Br> Gerenciadas", cat: "bai" });
-        objetivos.push({ nome: "Mudança Organizacional Gerenciada", cat: "bai" });
-        objetivos.push({ nome: "Mudanças de TI Gerenciadas", cat: "bai" });
-        objetivos.push({ nome: "Aceite e Transição de Mudança<br> Gerenciados", cat: "bai" });
-        objetivos.push({ nome: "Gerenciar Conhecimento", cat: "bai" });
-        objetivos.push({ nome: "Ativos Gerenciados", cat: "bai" });        
-        objetivos.push({ nome: "Configuração Gerenciada", cat: "bai" });
-        objetivos.push({ nome: "Projetos Gerenciados", cat: "bai" });
-        
-        objetivos.push({ nome: "Operações Gerenciadas", cat: "dss" });
-        objetivos.push({ nome: "Requisições de Serviço e<br> Incidentes Gerenciados", cat: "dss" });
-        objetivos.push({ nome: "Problemas Gerenciados", cat: "dss" });
-        objetivos.push({ nome: "Continuidade Gerenciada", cat: "dss" });
-        objetivos.push({ nome: "Serviços de Segurança Gerenciados ", cat: "dss" });
-        objetivos.push({ nome: "Controles de Processos de Negócio<br> Gerenciados ", cat: "dss" });
-      
-        objetivos.push({ nome: "Desempenho e Conformidade<br> Gerenciados", cat: "mea" });
-        objetivos.push({ nome: "Sistema de Controles Internos<br> Gerenciado", cat: "mea" });
-        objetivos.push({ nome: "Conformidade com Regulamentos<br> Externos Gerenciada", cat: "mea" });
-        objetivos.push({ nome: "Garantias Gerenciadas", cat: "mea" });
+        objetivos.push({ nome: "Gerenciar Programas e Projetos", cat: "bai" });
+        objetivos.push({ nome: "Gerenciar a Definição de Requisitos", cat: "bai" });
+        objetivos.push({ nome: "Gerenciar a Identificação<br> e Construção de Soluções", cat: "bai" });
+        objetivos.push({ nome: "Gerenciar a Disponibilidade<br> e Capacidade ", cat: "bai" });
+        objetivos.push({ nome: "Gerenciar a implementação de<br> Mudança Organizacional ", cat: "bai" });
+        objetivos.push({ nome: "Gerenciar Mudanças", cat: "bai" });
+        objetivos.push({ nome: "Gerenciar Aceite e<br> Transição de Mudança", cat: "bai" });
+        objetivos.push({ nome: "Gerenciar o Conhecimento", cat: "bai" });
+        objetivos.push({ nome: "Gerenciar os Ativos", cat: "bai" });
+        objetivos.push({ nome: "Gerenciar a Configuração", cat: "bai" });
+
+        objetivos.push({ nome: "Gerenciar as Operações", cat: "dss" });
+        objetivos.push({ nome: "Gerenciar Requisições <br>de Serviço e Incidentes", cat: "dss" });
+        objetivos.push({ nome: "Gerenciar Problemas", cat: "dss" });
+        objetivos.push({ nome: "Gerenciar a Continuidade", cat: "dss" });
+        objetivos.push({ nome: "Gerenciar os Serviços de Segurança", cat: "dss" });
+        objetivos.push({ nome: "Gerenciar os Controles<br> de Processos de Negocio", cat: "dss" });
+
+        objetivos.push({ nome: "Monitorar, Avaliar e Medir<br> o Desempenho e Conformidade", cat: "mea" });
+        objetivos.push({ nome: "Monitorar, Avaliar e Medir<br> o Sistema de Controle Interno ", cat: "mea" });
+        objetivos.push({ nome: "Monitorar, Avaliar e Medir<br> a Conformidade com Requisitos", cat: "mea" });
 
         const quantidadeDeItens = objetivos.length;
 

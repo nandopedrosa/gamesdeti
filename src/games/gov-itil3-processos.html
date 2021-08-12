@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">ITIL V3 - Processos</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">A ITIL V3 é uma biblioteca composta das melhores práticas para
+                            Gerenciamento de Serviços de TI, e tem uma estrutura de "ciclo de vida" de serviço. Nela, é
+                            possível encontrar 26 processos e 4 funções.
+                            .</p>
+                        <p>Associe cada processo ao seu estágio de ciclo de vida e identifique as funções da ITIL V3.
+                        </p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <div id="processos" style="min-height:100px" class="row mb-5">
+                    <div id="processos1" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="processos2" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="processos3" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="processos4" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: #3ab7c9;">Estratégia
+                                do Serviço</div>
+                            <div id="strategy" ondrop="drop(event,this)" ondragover="allowDrop(event)" class="card-body"
+                                style="background-color: #d5e6ed;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: #f0700a;">Desenho do
+                                Serviço</div>
+                            <div id="design" ondrop="drop(event,this)" ondragover="allowDrop(event)" class="card-body"
+                                style="background-color: #fbdad1;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: #ccd97f;">Transição
+                                do Serviço</div>
+                            <div id="transition" ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="card-body" style="background-color: #e5eed1;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: rgb(36,114,183);">
+                                Operação do
+                                Serviço</div>
+                            <div id="operation" ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="card-body" style="background-color: rgba(36,114,183,0.5);">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: rgb(54,89,28);">
+                                Melhoria
+                                Contínua do Serviço</div>
+                            <div id="improvement" ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="card-body" style="background-color: rgb(54,89,28,0.5);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="card mb-3">
+                            <div class="card-header text-bold text-white" style="background-color: rgb(150,149,155)">
+                                Funções
+                            </div>
+                            <div id="funcao" ondrop="drop(event,this)" ondragover="allowDrop(event)" class="card-body"
+                                style="background-color: rgba(150,149,155,0.5);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const processos = [];
+        processos.push({ nome: "Gerenciamento da Estratégia", cat: "strategy" });
+        processos.push({ nome: "Gerenciamento de Portfólio", cat: "strategy" });
+        processos.push({ nome: "Gerenciamento de Demandas", cat: "strategy" });
+        processos.push({ nome: "Gerenciamento Financeiro", cat: "strategy" });
+        processos.push({ nome: "Ger. do relacionamento<br> de negócio", cat: "strategy" });
+
+        processos.push({ nome: "Coordenação do Desenho", cat: "design" });
+        processos.push({ nome: "Gerenciamento do Catálogo", cat: "design" });
+        processos.push({ nome: "Gerenciamento do Nível<br> de Serviço", cat: "design" });
+        processos.push({ nome: "Gerenciamento da Capacidade", cat: "design" });
+        processos.push({ nome: "Gerenciamento da<br> Disponibilidade", cat: "design" });
+        processos.push({ nome: "Gerenciamento da Continuidade", cat: "design" });
+        processos.push({ nome: "Gerenciamento da Segurança<br> de Informação", cat: "design" });
+        processos.push({ nome: "Gerenciamento de<br> Fornecedores", cat: "design" });
+
+        processos.push({ nome: "Gerenciamento de Mudanças", cat: "transition" });
+        processos.push({ nome: "Gerenciamento de<Br> Configuração e Ativos", cat: "transition" });
+        processos.push({ nome: "Gerenciamento do<Br> Conhecimento", cat: "transition" });
+        processos.push({ nome: "Planejamento e Suporte<br> da Transição", cat: "transition" });
+        processos.push({ nome: "Gerenciamento de Liberação<br> e Implantação", cat: "transition" });
+        processos.push({ nome: "Validação e Testes de Serviço", cat: "transition" });
+        processos.push({ nome: "Avaliação", cat: "transition" });
+
+        processos.push({ nome: "Gerenciamento de Eventos", cat: "operation" });
+        processos.push({ nome: "Gerenciamento de Incidentes", cat: "operation" });
+        processos.push({ nome: "Gerenciamento de Problemas", cat: "operation" });
+        processos.push({ nome: "Cumprimento de Requisição", cat: "operation" });
+        processos.push({ nome: "Gerenciamento de Acesso", cat: "operation" });
+
+        processos.push({ nome: "Melhoria em 7 passos", cat: "improvement" });
+
+        processos.push({ nome: "Central de Serviços ", cat: "funcao" });
+        processos.push({ nome: "Gerenciamento Técnico", cat: "funcao" });
+        processos.push({ nome: "Gerenciamento de Aplicações", cat: "funcao" });
+        processos.push({ nome: "Gerenciamento de Operações de TI", cat: "funcao" });
+
+        const quantidadeDeItens = processos.length;
+
+        var itemHtmlTemplate = '<h5 categoria="#CATEGORIA#" id="drag#INDEX#" draggable="true" ondragstart="drag(event)"> <span class="badge badge-secondary">#NOME#</span></h5>';
+
+        //Imprimindo na tela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(processos);
+            processos.splice(item.index, 1); //remove o item do array
+            var itemHtml = itemHtmlTemplate.replace("#INDEX#", i).replace("#CATEGORIA#", item.objeto.cat).replace("#NOME#", item.objeto.nome);
+
+            if (i <= 6) {
+                $("#processos1").append(itemHtml);
+            } else if (i >= 6 && i <= 13) {
+                $("#processos2").append(itemHtml);
+            } else if (i >= 14 && i <= 21) {
+                $("#processos3").append(itemHtml);
+            } else {
+                $("#processos4").append(itemHtml);
+            }
+        }
+
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            //Checamos se o usuário enviou todas as respostas
+            if ($("#processos h5").children().length > 0) {
+                respostaCerta = false;
+                $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+            }
+
+            //Checamos cada processo, de cada estágio, e as funções
+            $('.card-body').children('h5').each(function () {
+                if ($(this).attr('categoria') !== $(this).parent().attr('id'))
+                    respostaCerta = false;                    
+            });
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>

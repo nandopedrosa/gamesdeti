@@ -58,11 +58,13 @@
         <section class="bg-light pt-1 pb-4">
             <div class="container mt-4">
                 <div id="praticas" style="min-height:100px"  class="row mb-5">
-                    <div id="praticas1" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    <div id="praticas1" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
                     </div>
-                    <div id="praticas2" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    <div id="praticas2" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
                     </div>
-                    <div id="praticas3" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    <div id="praticas3" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="praticas4" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
                     </div>
                 </div>
 
@@ -174,12 +176,14 @@
             praticas.splice(item.index, 1); //remove o item do array
             var itemHtml = itemHtmlTemplate.replace("#INDEX#", i).replace("#CATEGORIA#", item.objeto.cat).replace("#NOME#", item.objeto.nome);
 
-            if (i <= 11) {
+            if (i <= 8) {
                 $("#praticas1").append(itemHtml);
-            } else if (i >= 12 && i <= 22) {
+            } else if (i >= 9 && i <= 17) {
                 $("#praticas2").append(itemHtml);
-            } else {
+            } else if (i >= 18 && i <= 26) {
                 $("#praticas3").append(itemHtml);
+            } else {
+                $("#praticas4").append(itemHtml);
             }
         }
         //Função de enviar a resposta

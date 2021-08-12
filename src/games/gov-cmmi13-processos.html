@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">CMMI 1.3 - áreas-chave de processo</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">No CMMI 1.3, uma área-chave de processo é um conjunto de práticas relacionadas em uma área que, quando implementadas conjuntamente, satisfazem a um conjunto de metas consideradas importantes para realizar melhorias significativas naquela área.</p>
+                        <p>Associe cada área-chave de processo ao seu respectivo nível de maturidade e categoria.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <div id="processos" style="min-height:100px" class="row mb-5">
+
+                    <div id="processos1" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="processos2" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="processos3" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>                  
+                    <div id="processos4" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>                  
+                </div>
+
+                <table class="table table-bordered  ">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center; vertical-align:middle; width:15%" rowspan=2 scope="col">Categoria</th>
+                            <th style="text-align:center" colspan=5 scope="col">
+                                Nível de Maturidade
+                            </th>
+                        </tr>
+                        <tr>
+                            
+                            <th scope="col" style="text-align:center;width:22.5%">2</th>
+                            <th scope="col" style="text-align:center;width:22.5%">3</th>
+                            <th scope="col" style="text-align:center;width:22.5%">4</th>
+                            <th scope="col" style="text-align:center;width:22.5%">5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Gestão de Processos</th>                            
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Gestão de Projetos</th>                            
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Engenharia</th>                            
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Suporte</th>                            
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                            <td ondrop="drop(event,this)" ondragover="allowDrop(event)""></td>
+                        </tr>                       
+                    </tbody>
+
+                </table>
+
+
+            </div>
+
+
+
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const processos = [];
+        //Categorias: 1 - Gestao de Processos, 2 - Gestao de Projetos, 3 - Engenharia, 4 - Suporte.
+        processos.push({ nome: "Planejamento de Projeto", categoria:2, nivel:2});
+        processos.push({ nome: "Monitoramento e Controle<br> de projeto", categoria:2, nivel:2});
+        processos.push({ nome: "Gestão de contrato<br> com fornecedores", categoria:2, nivel:2});
+        processos.push({ nome: "Gestão de requisitos", categoria:2, nivel:2});
+
+        processos.push({ nome: "Medição e análise", categoria:4, nivel:2});
+        processos.push({ nome: "Garantia da qualidade de<br> processo e produto", categoria:4, nivel:2});
+        processos.push({ nome: "Gestão de configuração", categoria:4, nivel:2});  
+
+        processos.push({ nome: "Foco nos processos<br> da Organização", categoria:1, nivel:3});  
+        processos.push({ nome: "Definição dos processos<br> da Organização", categoria:1, nivel:3});  
+        processos.push({ nome: "Treinamento na organização", categoria:1, nivel:3});  
+
+        processos.push({ nome: "Gestão integrada de projeto", categoria:2, nivel:3});  
+        processos.push({ nome: "Gestão de riscos", categoria:2, nivel:3});  
+        
+        processos.push({ nome: "Desenvolvimento de requisitos", categoria:3, nivel:3});  
+        processos.push({ nome: "Solução técnica", categoria:3, nivel:3});  
+        processos.push({ nome: "Integração de produto", categoria:3, nivel:3});  
+        processos.push({ nome: "Verificação", categoria:3, nivel:3});  
+        processos.push({ nome: "Validação", categoria:3, nivel:3});  
+
+        processos.push({ nome: "Análise e tomada<br> de decisões", categoria:4, nivel:3});  
+
+        processos.push({ nome: "Desepenho dos processos<br> da organização", categoria:1, nivel:4});  
+        processos.push({ nome: "Gestão quantitativa<br> de projetos", categoria:2, nivel:4});  
+
+        processos.push({ nome: "Gestão do desempenho<br> organizacional", categoria:1, nivel:5});  
+        processos.push({ nome: "Análise e resolução<br> de causas", categoria:4, nivel:5});  
+
+
+        const quantidadeDeItens = processos.length;
+
+        var itemHtmlTemplate = '<h5 categoria="#CATEGORIA#", nivel="#NIVEL#", id="drag#INDEX#" draggable="true" ondragstart="drag(event)"> <span class="mt-1 mr-1 ml-1 badge badge-secondary">#NOME#</span></h5>';
+
+        //Imprimindo na tela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(processos);
+            processos.splice(item.index, 1); //remove o item do array
+            var itemHtml = itemHtmlTemplate
+                           .replace("#INDEX#", i)
+                           .replace("#CATEGORIA#", item.objeto.categoria)
+                           .replace("#NIVEL#", item.objeto.nivel)
+                           .replace("#NOME#", item.objeto.nome);                           
+
+            if (i <= 4) {
+                $("#processos1").append(itemHtml);
+            } else if (i >= 5 && i <= 9) {
+                $("#processos2").append(itemHtml);
+            }
+            else if (i >= 10 && i <= 15) {
+                $("#processos3").append(itemHtml);
+            } else {
+                $("#processos4").append(itemHtml);
+            }             
+        }
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            //Checamos se o usuário enviou todas as respostas
+            if ($("#processos h5").children().length > 0) {
+                respostaCerta = false;
+                $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+            }
+
+            
+            $('tbody  > tr').each(function(categoria) {
+                $(this).children("td").each(function(index){
+                    $(this).children('h5').each(function(){
+                        if ($(this).attr('categoria') !== (categoria+1).toString()) {
+                            respostaCerta = false;
+                        }
+                        
+                        if ($(this).attr('nivel') !== (index+2).toString()) {
+                            respostaCerta = false;
+                        }                        
+                    });
+                });                
+            });
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>
