@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">Padrões de Projeto - Ganf of Four</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">Um padrão de projeto descreve uma solução para resolver um problema
+                            genérico de projeto em um contexto específico. Ele dá nome, abstrai e identifica os
+                            aspectos-chave de uma estrutura de projeto comum para torná-la reutilizável.</p>
+                        <p>Padrões de projeto podem ser Criacionais, Comportamentais ou Estruturais.</p>
+                        <p>Associe cada padrão de projeto ao seu tipo e descrição.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <div id="padroes" style="min-height:100px" class="row mb-5">
+                    <div id="padroes1" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="padroes2" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="padroes3" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="padroes4" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                </div>
+
+                <table class="table table-bordered  ">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="text-align:center;width:20%">Padrão</th>
+                            <th scope="col" style="text-align:center;width:20%">Tipo</th>
+                            <th scope="col" style="text-align:center;width:60%;">Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-padroes">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const padroes = [];
+        padroes.push({ nome: "Abstract Factory", tipo: "Criacional", cod: "gof-1", desc: "Proporciona uma interface para criar famílias de objetos relacionados ou dependentes sem especificar suas classes concretas." });
+        padroes.push({ nome: "Builder", tipo: "Criacional", cod: "gof-2", desc: "Separa a construção de um objeto complexo da sua representação, de forma que o mesmo processo de construção possa criar diferentes tipos de representações." });
+        padroes.push({ nome: "Factory Method", tipo: "Criacional", cod: "gof-3", desc: "Define uma interface para criar um objeto, mas deixa as subclasses decidirem qual classe instanciar." });
+        padroes.push({ nome: "Prototype", tipo: "Criacional", cod: "gof-4", desc: "Especifica os tipos de objetos para criar usando uma instância prototípica, e cria novos objetos copiando esse protótipo." });
+        padroes.push({ nome: "Singleton", tipo: "Criacional", cod: "gof-5", desc: "Garante que uma classe tem apenas uma instância, e proporciona um ponto de acesso global a ela." });
+
+        padroes.push({ nome: "Adapter", tipo: "Estrutural", cod: "gof-6", desc: "Converte a interface de uma classe em outra interface que o cliente espera." });
+        padroes.push({ nome: "Bridge", tipo: "Estrutural", cod: "gof-7", desc: "Desacopla uma interface de sua implementação, de forma que ela possa variar independentemente." });
+        padroes.push({ nome: "Composite", tipo: "Estrutural", cod: "gof-8", desc: "Compõe objetos em estruturas de árvore para representar hierarquias parte-todo." });
+        padroes.push({ nome: "Proxy", tipo: "Estrutural", cod: "gof-9", desc: "Fornece um objeto representante ou um marcador de outro objeto para controlar o acesso ao mesmo." });
+        padroes.push({ nome: "Decorator", tipo: "Estrutural", cod: "gof-10", desc: "Anexa responsabilidades adicionais a um objeto dinamicamente." });
+        padroes.push({ nome: "Façade", tipo: "Estrutural", cod: "gof-11", desc: "Provê uma interface unificada para um conjunto de interfaces de um subsistema." });
+        padroes.push({ nome: "Flyweight", tipo: "Estrutural", cod: "gof-12", desc: "Usa compartilhamento para suportar grandes quantidades de objetos, de granularidade fina, de maneira eficiente." });
+
+        padroes.push({ nome: "Strategy", tipo: "Comportamental", cod: "gof-13", desc: "Define uma família de algoritmos, encapsula cada um, e faz deles intercambiáveis." });
+        padroes.push({ nome: "Chain of Responsibility", tipo: "Comportamental", cod: "gof-14", desc: "Evita o acoplamento do remetente de uma solicitação ao seu receptor. Encadeia os objetos receptores, passando a solicitação ao longo da cadeira até que um objeto a trate." });
+        padroes.push({ nome: "Iterator", tipo: "Comportamental", cod: "gof-15", desc: "Fornece um meio de acessar sequencialmente os elementos de um objeto agregado sem expor a sua representação subjacente." });
+        padroes.push({ nome: "State", tipo: "Comportamental", cod: "gof-16", desc: "Permite que um objeto mude o seu comportamento quando o seu estado interno mudar." });
+        padroes.push({ nome: "Command", tipo: "Comportamental", cod: "gof-17", desc: "Encapsula uma requisição como um objeto, deixando-o, dessa forma, parametrizar os clientes com diferentes requisições." });
+        padroes.push({ nome: "Observer", tipo: "Comportamental", cod: "gof-18", desc: "Define uma dependência entre objetos de forma que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente." });
+        padroes.push({ nome: "Visitor", tipo: "Comportamental", cod: "gof-19", desc: "Representa uma operação a ser executada sobre os elementos da estrutura de um objeto." });
+        padroes.push({ nome: "Memento", tipo: "Comportamental", cod: "gof-20", desc: "Sem violar o encapsulamento, captura e externaliza o estado interno de um objeto, de forma que ele possa ser recuperado depois." });
+        padroes.push({ nome: "Mediator", tipo: "Comportamental", cod: "gof-21", desc: "Define um objeto que encapsula a forma como um conjunto de objetos interage. Promove o acoplamento fraco ao evitar que os objetos se refiram explicitamente uns aos outros." });
+        padroes.push({ nome: "Template Method", tipo: "Comportamental", cod: "gof-22", desc: "Define o esqueleto de um algoritmo em uma operação, deferindo alguns passos para as subclasses." });
+        padroes.push({ nome: "Interpreter", tipo: "Comportamental", cod: "gof-23", desc: "Dada uma linguagem, define uma representação para sua gramática juntamente com um interpretador para as sentenças dessa linguagem." });
+
+
+        const quantidadeDeItens = padroes.length;
+
+        var itemHtmlTemplate = '<h5 cod="#CODIGO#" tipo="#TIPO#" id="drag#INDEX#" draggable="true" ondragstart="drag(event)"> <span class="mt-1 mr-1 ml-1 badge badge-secondary">#NOME#</span></h5>';
+
+        //Imprimindo na tela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(padroes);
+            padroes.splice(item.index, 1); //remove o item do array
+            var itemHtml = itemHtmlTemplate
+                .replace("#INDEX#", i)
+                .replace("#CODIGO#", item.objeto.cod)
+                .replace("#TIPO#", item.objeto.tipo)
+                .replace("#NOME#", item.objeto.nome);
+
+            if (i <= 5) {
+                $("#padroes1").append(itemHtml);
+            } else if (i >= 6 && i <= 11) {
+                $("#padroes2").append(itemHtml);
+            } else if (i >= 12 && i <= 18) {
+                $("#padroes3").append(itemHtml);
+            } else {
+                $("#padroes4").append(itemHtml);
+            }
+
+            //Imprimindo na tabela
+            var linhaDaTabela = '<tr cod="#CODIGO#" tipo="#TIPO#"><td ondrop="drop(event,this)" ondragover="allowDrop(event)"></td><td><select class="form-control"> <option value="" selected disabled></option> <option>Criacional</option> <option>Estrutural</option> <option>Comportamental</option> </select></td><td class="text-justify">#DESC#</td></tr>'
+            linhaDaTabela = linhaDaTabela
+                .replace('#DESC#', item.objeto.desc)
+                .replace("#CODIGO#", item.objeto.cod)
+                .replace("#TIPO#", item.objeto.tipo);
+            $('#tabela-padroes').append(linhaDaTabela);
+        }
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            /*
+               //Checamos se o usuário enviou todas as respostas
+               if ($("#padroes h5").children().length > 0) {
+                   respostaCerta = false;
+                   $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+               }
+   
+               $("#tabela-padroes").find('select').each(function () {
+                   if ($(this).val() == null) {
+                       respostaCerta = false;
+                       $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+                   }
+               });
+               */
+
+            if (respostaCerta) {
+                //Agora checamos se a resposta realmente foi correta
+                $('tbody  > tr').each(function () {
+                    //Codigo do padrao (nome)
+                    var codigoPadrao = $(this).find(">:first-child > h5").first().attr('cod');
+
+                    if (typeof codigoPadrao !== 'undefined' && codigoPadrao !== null) {
+                        if (codigoPadrao != $(this).attr('cod'))
+                            respostaCerta = false;
+
+                        // Tipo do padrao (criacional, estrutural, etc.)
+                        if ($(this).find(">:nth-child(2) > select").val() != $(this).attr('tipo'))
+                            respostaCerta = false;
+                    }
+                });
+            }
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>
