@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">CMMI 2.0 - áreas de prática</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">No CMMI 2.0, uma área de prática é um conjunto de práticas que,
+                            conjuntamente, descrevem as atividades críticas necessárias para alcançar uma intenção e
+                            valor definidos. São 20 áreas de prática na visualização CMMI-DEV. Cada área de prática está
+                            associada a uma área de capacidade, que são grupos de áreas de prática relacionadas que
+                            podem proporcionar um melhor desempenho nas habilidades de uma organização ou projeto.
+                            Atualmente há 10 áreas de capacidade no CMMI-DEV.</p>
+                        <p>Associe cada área de prática com sua respectiva área de capacidade.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <div id="praticas" style="min-height:100px" class="row mb-5">
+
+                    <div id="praticas1" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="praticas2" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="praticas3" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="praticas4" class="col-sm-3" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                </div>
+
+                <table class="table table-bordered  ">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center; width:20%" scope="col">Área de Capacidade</th>
+                            <th style="text-align:center; width:80%" scope="col">
+                                Área de Prática
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <tbody id="tabela-cmmi20">
+                        <tr>
+                            <th scope="row">Garantia de Qualidade&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            <td id="enq" ondrop="drop(event,this)" ondragover="allowDrop(event)"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Engenharia e Des. de Produtos</th>
+                            <td id="edp" ondrop="drop(event,this)" ondragover="allowDrop(event)"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Seleção e Gestão de Fornecedores</th>
+                            <td id="sms" ondrop="drop(event,this)" ondragover="allowDrop(event)"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Planejamento e Gestão do Trabalho</th>
+                            <td id="pmw" ondrop="drop(event,this)" ondragover="allowDrop(event)"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Gestão de Resiliência dos Negócios</th>
+                            <td id="mbr" ondrop="drop(event,this)" ondragover="allowDrop(event)"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Gestão da Força de Trabalho</th>
+                            <td id="mwf" ondrop="drop(event,this)" ondragover="allowDrop(event)"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Suporte à Implementação</th>
+                            <td id="si" ondrop="drop(event,this)" ondragover="allowDrop(event)"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sustentação do Hábito e Persistência</th>
+                            <td id="shp" ondrop="drop(event,this)" ondragover="allowDrop(event)"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Melhoria do Desempenho</th>
+                            <td id="imp" ondrop="drop(event,this)" ondragover="allowDrop(event)"></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+
+
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const praticas = [];        
+        praticas.push({ nome: "Garantia da qualidade do processo", categoria: "enq" });
+        praticas.push({ nome: "Desenvolvimento e gestão<br> de requisitos", categoria: "enq" });
+        praticas.push({ nome: "Revisão por par", categoria: "enq" });
+        praticas.push({ nome: "Verificação e validação", categoria: "enq" });
+
+        praticas.push({ nome: "Solução técnica", categoria: "edp" });
+        praticas.push({ nome: "Integração do produto", categoria: "edp" });
+        
+        praticas.push({ nome: "Gestão de contrato de fornecedor", categoria: "sms" });
+        
+        praticas.push({ nome: "Estimativa", categoria: "pmw" });
+        praticas.push({ nome: "Planejamento", categoria: "pmw" });
+        praticas.push({ nome: "Monitorar e controlar", categoria: "pmw" });
+
+        praticas.push({ nome: "Gestão de riscos e oportunidades", categoria: "mbr" });
+
+        praticas.push({ nome: "Treinamento Organizacional", categoria: "mwf" });
+
+        praticas.push({ nome: "Análise causal e resolução", categoria: "si" });
+        praticas.push({ nome: "Análise de decisão e resolução", categoria: "si" });
+        praticas.push({ nome: "Gestão de configurações", categoria: "si" });
+
+        praticas.push({ nome: "Governança", categoria: "shp" });
+        praticas.push({ nome: "Infraestrutura de implementação", categoria: "shp" });
+
+        praticas.push({ nome: "Gestão de Processos", categoria: "imp" });
+        praticas.push({ nome: "Desenvolvimento de ativos<br> de processos", categoria: "imp" });
+        praticas.push({ nome: "Gestão de desempenho<br> e medição", categoria: "imp" });
+                
+        
+        const quantidadeDeItens = praticas.length;
+
+        var itemHtmlTemplate = '<h5 categoria="#CATEGORIA#", id="drag#INDEX#" draggable="true" ondragstart="drag(event)"> <span class="mt-1 mr-1 ml-1 badge badge-secondary">#NOME#</span></h5>';
+
+        //Imprimindo na tela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(praticas);
+            praticas.splice(item.index, 1); //remove o item do array
+            var itemHtml = itemHtmlTemplate
+                .replace("#INDEX#", i)
+                .replace("#CATEGORIA#", item.objeto.categoria)                
+                .replace("#NOME#", item.objeto.nome);
+
+            if (i <= 4) {
+                $("#praticas1").append(itemHtml);
+            } else if (i >= 5 && i <= 9) {
+                $("#praticas2").append(itemHtml);
+            }
+            else if (i >= 10 && i <= 15) {
+                $("#praticas3").append(itemHtml);
+            } else {
+                $("#praticas4").append(itemHtml);
+            }
+        }
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            //Checamos se o usuário enviou todas as respostas
+            if ($("#praticas h5").children().length > 0) {
+                respostaCerta = false;
+                $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+            }
+
+            $('tbody  > tr').each(function () {
+                $(this).children("td").each(function (indx) {
+                    $(this).children('h5').each(function () {
+                        if ($(this).attr('categoria') !== $(this).parent().attr('id')) {
+                            respostaCerta = false;
+                        }
+                    });
+                });
+            });
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>

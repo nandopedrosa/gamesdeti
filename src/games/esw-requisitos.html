@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">Requisitos Não Funcionais</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">Requisitos não funcionais são características, restrições e qualidades
+                            específicas do sistema. Entretanto, RNF's podem ser também de outros tipos, não apenas de
+                            produtos. Requisitos do produto especificam que o software entregue deve se comportar de um
+                            determinado modo. Requisitos organizacionais são consequência das políticas e procedimentos
+                            organizacionais. Requisitos externos são externos ao sistema e seu desenvolvimento.</p>
+                        <p>Associe cada RNF com seu respecitvo tipo.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div id="requisitos" class="container mt-4">
+
+            </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const requisitos = [];
+        requisitos.push({ nome: "Confiabilidade", categoria: "Produto" });
+        requisitos.push({ nome: "Usabilidade", categoria: "Produto" });
+        requisitos.push({ nome: "Desempenho", categoria: "Produto" });
+        requisitos.push({ nome: "Eficiência", categoria: "Produto" });
+        requisitos.push({ nome: "Armazenamento", categoria: "Produto" });
+        requisitos.push({ nome: "Portabilidade", categoria: "Produto" });
+        requisitos.push({ nome: "Robustez", categoria: "Produto" });
+
+
+        requisitos.push({ nome: "Ética", categoria: "Externo" });
+        requisitos.push({ nome: "Regulamentos de Mercado", categoria: "Externo" });
+        requisitos.push({ nome: "Legislação", categoria: "Externo" });
+        requisitos.push({ nome: "Requisitos Tributários", categoria: "Externo" });
+
+        requisitos.push({ nome: "Processo de Desenvolvimento", categoria: "Organizacional" });
+        requisitos.push({ nome: "Padrão de Documentação", categoria: "Organizacional" });
+        requisitos.push({ nome: "Prazo de Entrega", categoria: "Organizacional" });
+
+
+
+        const quantidadeDeItens = requisitos.length;
+
+        var itemHtmlTemplate = '<div class="mb-4 row"> <div class="col-sm-3"> <p class="pt-2" >#NOME-PAR#</p> </div> <div class="col-sm-2"> <select categoria="#CATEGORIA-PAR#" class="mb-2 mr-sm-2 form-control"> <option value="" selected disabled></option> <option>Produto</option> <option>Organizacional</option> <option>Externo</option> </select> </div> <div class="col-sm-3 offset-sm-1"> <p class="pt-2" >#NOME-IMPAR#</p> </div> <div class="col-sm-2"> <select categoria="#CATEGORIA-IMPAR#" style="display:inline-block" class="form-control mb-2 mr-sm-2" id=""> <option value="" selected disabled></option> <option>Produto</option> <option>Organizacional</option> <option>Externo</option> </select> </div> </div> ';
+
+        //Imprimindo na tela
+        while (true) {
+            var itemHtml = '';
+
+            const itemPar = getRandomItem(requisitos);
+            if (itemPar == null)
+                break;
+            requisitos.splice(itemPar.index, 1); //remove o item do array
+
+            itemHtml = itemHtmlTemplate
+                .replace("#CATEGORIA-PAR#", itemPar.objeto.categoria)
+                .replace("#NOME-PAR#", itemPar.objeto.nome);
+
+            const itemImpar = getRandomItem(requisitos);
+            if (itemImpar == null) {
+                itemHtml = itemHtml
+                    .replace("#CATEGORIA-IMPAR#", "")
+                    .replace("#NOME-IMPAR#", "")
+                    .replace("display:inline-block", "display:none");
+                $("#requisitos").append(itemHtml);
+                break;
+            }
+
+            requisitos.splice(itemImpar.index, 1); //remove o item do array
+
+            itemHtml = itemHtml
+                .replace("#CATEGORIA-IMPAR#", itemImpar.objeto.categoria)
+                .replace("#NOME-IMPAR#", itemImpar.objeto.nome);
+
+            $("#requisitos").append(itemHtml);
+
+        }
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            //Checamos se o usuário enviou todas as respostas
+            $("#requisitos").find('select').each(function () {
+                if ($(this).val() == null) {
+                    respostaCerta = false;
+                    $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+                }
+            });           
+
+            $("#requisitos").find('select').each(function () {
+                if ($(this).val() !== $(this).attr('categoria') ) {
+                    respostaCerta = false;                    
+                }
+            });  
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>
