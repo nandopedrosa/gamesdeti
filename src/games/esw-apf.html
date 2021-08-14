@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">Análise de Pontos de Função</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">Na Análise de Pontos de Função, os Tipos de Dados e Tipos Transacionais
+                            têm pesos diferentes para cada nível de complexidade.</p>
+                        <p>Digite o peso de cada tipo funcional para a sua respectiva complexidade.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <table class="table table-bordered  ">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width:10%; border-left-color: #f8f9fa; border-top-color: #f8f9fa;">
+                            </th>
+                            <th scope="col" style="text-align:center; width:18%;">ALI</th>
+                            <th scope="col" style="text-align:center; width:18%;">AIE</th>
+                            <th scope="col" style="text-align:center; width:18%;">EE</th>
+                            <th scope="col" style="text-align:center; width:18%;">SE</th>
+                            <th scope="col" style="text-align:center; width:18%;">CE</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-weight-bold">Baixa</td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="7" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="5" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="3" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="4" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="3" type="number" class="form-control">
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="font-weight-bold">Média</td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="10" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="7" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="4" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="5" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="4" type="number" class="form-control">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold">Alta</td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="15" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="10" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="6" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="7" type="number" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input peso="6" type="number" class="form-control">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            //Checamos se o usuário enviou todas as respostas
+            $('input').each(function(){
+                var valor = $(this).val();
+                if(valor == '' || valor == null || typeof valor == 'undefined') {
+                    respostaCerta = false;
+                    $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+                }
+                     
+            });
+
+            $('input').each(function(){
+                var valor = $(this).val();
+                if(valor != $(this).attr('peso'))
+                    respostaCerta = false;
+            });
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>

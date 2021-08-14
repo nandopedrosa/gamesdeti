@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">Algoritmos e Estrutura de Dados</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">
+                            Um algoritmo é um processo discreto e determinístico que possui uma seqüência de ações indivisíveis, e que para cada passo da seqüência e para cada conjunto válido de dados, corresponde uma e somente uma ação.</p>
+                        <p class="text-justify"> Uma estrutura de dados geralmente esconde a sua implementação de quem o manipula, de maneira que determinadas operações sobre estes dados podem ser executadas sem que se saiba como isso é feito.</p>
+                        <p>Associe cada algoritmo ou estrutura de dados à sua respectiva descrição.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <div id="algoritmos" style="min-height:100px" class="row mb-5">
+                        <div id="algoritmos1" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                        </div>
+                        <div id="algoritmos2" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                        </div>
+                        <div id="algoritmos3" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                        </div>                    
+                </div>
+
+                <table class="table table-bordered  ">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="text-align:center;width:20%">Algoritmo/Estrutura</th>
+                            <th scope="col" style="text-align:center;width:80%;">Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-algoritmos">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const algoritmos = [];
+        algoritmos.push({ nome: "Bubble Sort", cod: "alg-1", desc: "A ideia é percorrer uma estrutura diversas vezes, e a cada passagem fazer flutuar para o topo o maior elemento da sequência." });
+        
+        algoritmos.push({ nome: "Insertion Sort", cod: "alg-2", desc: "Dada uma estrutura, constrói uma matriz final com um elemento de cada vez, uma inserção por vez. Os elementos da matriz são comparados uns com os outros sequencialmente e, em seguida, organizados simultaneamente em alguma ordem particular." });
+        
+        algoritmos.push({ nome: "Selection Sort", cod: "alg-3", desc: "Baseia-se em passar sempre o menor valor do vetor para a primeira posição (ou o maior dependendo da ordem requerida), depois o de segundo menor valor para a segunda posição, e assim sucessivamente." });
+
+        algoritmos.push({ nome: "Quicksort", cod: "alg-4", desc: "Adota a estratégia de dividir para conquistar. Consiste em rearranjar as chaves de modo que as chaves menores precedam as chaves maiores. Em seguida, ordena as duas sublistas de chaves menores e maiores recursivamente até que a lista completa se encontre ordenada." });
+
+        algoritmos.push({ nome: "Mergesort", cod: "alg-5", desc: "Divide a lista não classificada em n sublistas, cada uma contendo um elemento (uma lista de um elemento é considerada classificada). Reúne as sublistas repetidamente para produzir novas sublistas classificadas até que haja apenas uma sublista restante. Esta será a lista classificada." });
+
+        algoritmos.push({ nome: "Shellsort", cod: "alg-6", desc: "O método começa classificando pares de elementos distantes um do outro e, em seguida, reduzindo progressivamente a lacuna entre os elementos a serem comparados. Começando com elementos distantes, ele pode mover alguns elementos fora do lugar para a posição mais rápido do que uma simples troca de vizinho mais próximo." });
+
+        algoritmos.push({ nome: "Array", cod: "alg-7", desc: "Estrutura de dados linear, geralmente homogênea (contém elementos do mesmo tipo) e armazenada contiguamente. Elementos são acessados diretamente através de um índice." });
+
+        algoritmos.push({ nome: "Pilha", cod: "alg-8", desc: "Estrutura do tipo Last in, First Out (LIFO). É uma lista linear na qual o primeiro elemento a entrar é o último elemento a sair. Ela possui apenas uma entrada, chamada de topo, a partir da qual os dados entram e saem dela." });
+
+        algoritmos.push({ nome: "Fila", cod: "alg-9", desc: "Estrutura do tipo First in, First Out (FIFO). Esse tipo específico de estrutura é muito usado em aplicações que requerem que os itens sejam acessados na ordem em que foram adicionados à lista. Neste caso só são permitidas inserções no final da estrutura e remoções no começo." });
+
+        algoritmos.push({ nome: "Lista Ligada", cod: "alg-10", desc: "É composta por células que apontam para o próximo elemento da lista. deve guardar as referências para o seu primeiro e último elementos (este, por sua vez, tem seu apontador voltado para uma referência nula)." });
+        
+        algoritmos.push({ nome: "Árvore Binária", cod: "alg-11", desc: "Estrutura caracterizada por: a) ou não tem elemento algum; b) ou tem um elemento distinto, denominado raiz, com dois apontadores para duas estruturas diferentes, denominadas sub-árvore esquerda e sub-árvore direita." });
+
+        algoritmos.push({ nome: "Tabela Hash", cod: "alg-12", desc: "É uma estrutura de dados especial, que associa chaves de pesquisa a valores. Seu objetivo é, a partir de uma chave simples, fazer uma busca rápida e obter o valor desejado." });
+        
+
+        const quantidadeDeItens = algoritmos.length;
+
+        var itemHtmlTemplate = '<h5 cod="#CODIGO#" tipo="#TIPO#" id="drag#INDEX#" draggable="true" ondragstart="drag(event)"> <span class="mt-1 mr-1 ml-1 badge badge-secondary">#NOME#</span></h5>';
+
+        //Imprimindo na tela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(algoritmos);
+            algoritmos.splice(item.index, 1); //remove o item do array
+            var itemHtml = itemHtmlTemplate
+                .replace("#INDEX#", i)
+                .replace("#CODIGO#", item.objeto.cod)                
+                .replace("#NOME#", item.objeto.nome);
+
+            if (i <= 3) {
+                $("#algoritmos1").append(itemHtml);
+            } else if (i >= 4 && i <= 7) {
+                $("#algoritmos2").append(itemHtml);
+            } else {
+                $("#algoritmos3").append(itemHtml);
+            }
+
+            //Imprimindo na tabela
+            var linhaDaTabela = '<tr cod="#CODIGO#"><td ondrop="drop(event,this)" ondragover="allowDrop(event)"></td><td class="text-justify">#DESC#</td></tr>';
+            linhaDaTabela = linhaDaTabela
+                .replace('#DESC#', item.objeto.desc)
+                .replace("#CODIGO#", item.objeto.cod)
+                .replace("#TIPO#", item.objeto.tipo);
+            $('#tabela-algoritmos').append(linhaDaTabela);
+        }
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            
+            //Checamos se o usuário enviou todas as respostas
+            if ($("#algoritmos h5").children().length > 0) {
+                respostaCerta = false;
+                $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+            }
+
+            $('tbody  > tr').each(function () {  
+                if($(this).find('td').children('h5').length > 1) {
+                    respostaCerta = false;
+                    $('#texto-resposta-errada').text('Associe apenas um item em cada linha da tabela. Não vale roubar =D.');
+                }
+            });
+        
+
+            if (respostaCerta) {
+                //Agora checamos se a resposta realmente foi correta
+                $('tbody  > tr').each(function () {
+                    //Codigo do padrao (nome)
+                    var codigoPadrao = $(this).find(">:first-child > h5").first().attr('cod');
+
+                    if (typeof codigoPadrao !== 'undefined' && codigoPadrao !== null) {
+                        if (codigoPadrao != $(this).attr('cod'))
+                            respostaCerta = false;
+                    }
+                });
+            }
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>

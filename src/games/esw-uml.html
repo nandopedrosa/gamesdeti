@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">Unified Modeling Language - UML</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">A UML possui dois grandes tipos de diagramas: estruturais e comportamentais. Diagramas estruturais mostram a estrutura estática do sistema e suas partes em diferentes níveis de abstração e como elas se relacionam, não utilizando conceitos relacionados ao passar do tempo. Diagramas comportamentais mostram a natureza dinâmica dos objetos do sistema, que pode ser descrita como uma série de mudanças no sistema com o passar do tempo - eles pode ser subclassificados em diagramas de interação.
+                        </p>
+                        <p>Associe cada diagrama UML ao seu tipo e descrição.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <div id="diagramas" style="min-height:100px" class="row mb-5">
+                    <div id="diagramas1" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="diagramas2" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="diagramas3" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">                  
+                    </div>
+                </div>
+
+                <table class="table table-bordered  ">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="text-align:center;width:20%">Diagrama</th>
+                            <th scope="col" style="text-align:center;width:20%">Tipo</th>
+                            <th scope="col" style="text-align:center;width:60%;">Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-diagramas">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const diagramas = [];
+        diagramas.push({ nome: "Diagrama de Classes", tipo: "Estrutural", cod: "uml-1", desc: "Descreve a estrutura de um sistema, mostrando as classes do sistema, seus atributos, operações (ou métodos) e as relações entre elas." });
+        diagramas.push({ nome: "Diagrama de Objetos", tipo: "Estrutural", cod: "uml-2", desc: "Representa um  conjunto particular de objetos e atributos e os links entre suas instâncias." });
+        diagramas.push({ nome: "Diagrama de Componentes", tipo: "Estrutural", cod: "uml-3", desc: "Modela o sistema em termos de componentes e seus relacionamentos através de interfaces." });
+        diagramas.push({ nome: "Diagrama de Pacotes", tipo: "Estrutural", cod: "uml-4", desc: "Descreve estruturas que permitem agrupar qualquer construção da UML em estruturas de alto nível." });
+        diagramas.push({ nome: "Diagrama de Implantação", tipo: "Estrutural", cod: "uml-5", desc: "Modela a configuração física do sistema, revelando que pedaços de software rodam em que equipamentos de hardware."});
+        diagramas.push({ nome: "Diagrama de Estrutura Composta", tipo: "Estrutural", cod: "uml-6", desc: "Mostra a estrutura interna de uma classe, representando as possíveis colaborações possíveis entre partes, portas e conectores." });
+        diagramas.push({ nome: "Diagrama de Perfis", tipo: "Estrutural", cod: "uml-7", desc: "Diagrama auxiliar que permite definir tipos padronizados de estereótipos, valores rotulados e restrições." });
+
+        diagramas.push({ nome: "Diagrama de Casos de Uso", tipo: "Comportamental", cod: "uml-8", desc: "Descreve um conjunto de cenários que capturam os requisitos do sistema e delimitam seu escopo." });
+        diagramas.push({ nome: "Diagrama de Máquina de Estados", tipo: "Comportamental", cod: "uml-9", desc: "Mostra os vários estados possíveis por quais um objeto pode passar." });
+        diagramas.push({ nome: "Diagrama de Atividades", tipo: "Comportamental", cod: "uml-10", desc: "Descreve lógicas de procedimento, processos de negócio e fluxos de trabalho." });
+
+        diagramas.push({ nome: "Diagrama de Sequência", tipo: "Interação", cod: "uml-11", desc: "Captura o comportamento de um determinado cenário. Mostra os objetos e as mensagens trocadas entre eles. Enfatiza a ordem temporal entre as mensagens." });
+        diagramas.push({ nome: "Diagrama de Comunicação", tipo: "Interação", cod: "uml-12", desc: "Captura o comportamento de um determinado cenário. Mostra os objetos e as mensagens trocadas entre eles. Enfatiza a ordem estrutural entre as mensagens." });
+        diagramas.push({ nome: "Diagrama de Tempo", tipo: "Interação", cod: "uml-13", desc: "Captura o comportamento de objetos ao longo do tempo e a duração na qual eles permanecem em determinados estados." });
+        diagramas.push({ nome: "Diagrama de Interação Geral", tipo: "Interação", cod: "uml-14", desc: "Fornece uma visão geral do controle de fluxo entre objetos. É uma mistura entre diagramas de sequência e diagramas de atividade" });
+
+
+        const quantidadeDeItens = diagramas.length;
+
+        var itemHtmlTemplate = '<h5 cod="#CODIGO#" tipo="#TIPO#" id="drag#INDEX#" draggable="true" ondragstart="drag(event)"> <span class="mt-1 mr-1 ml-1 badge badge-secondary">#NOME#</span></h5>';
+
+        //Imprimindo na tela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(diagramas);
+            diagramas.splice(item.index, 1); //remove o item do array
+            var itemHtml = itemHtmlTemplate
+                .replace("#INDEX#", i)
+                .replace("#CODIGO#", item.objeto.cod)
+                .replace("#TIPO#", item.objeto.tipo)
+                .replace("#NOME#", item.objeto.nome);
+
+            if (i <= 4) {
+                $("#diagramas1").append(itemHtml);
+            } else if (i >= 5 && i <= 9) {
+                $("#diagramas2").append(itemHtml);
+            } else {
+                $("#diagramas3").append(itemHtml);
+            }
+
+            //Imprimindo na tabela
+            var linhaDaTabela = '<tr cod="#CODIGO#" tipo="#TIPO#"><td ondrop="drop(event,this)" ondragover="allowDrop(event)"></td><td><select class="form-control"> <option value="" selected disabled></option> <option>Estrutural</option> <option>Comportamental</option> <option>Interação</option> </select></td><td class="text-justify">#DESC#</td></tr>'
+            linhaDaTabela = linhaDaTabela
+                .replace('#DESC#', item.objeto.desc)
+                .replace("#CODIGO#", item.objeto.cod)
+                .replace("#TIPO#", item.objeto.tipo);
+            $('#tabela-diagramas').append(linhaDaTabela);
+        }
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            
+               //Checamos se o usuário enviou todas as respostas
+               if ($("#diagramas h5").children().length > 0) {
+                   respostaCerta = false;
+                   $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+               }
+   
+               $("#tabela-diagramas").find('select').each(function () {
+                   if ($(this).val() == null) {
+                       respostaCerta = false;
+                       $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+                   }
+               });
+
+               $('tbody  > tr').each(function () {  
+                if($(this).find('td').children('h5').length > 1) {
+                    respostaCerta = false;
+                    $('#texto-resposta-errada').text('Associe apenas um item em cada linha da tabela. Não vale roubar =D.');
+                }
+                });
+               
+
+            if (respostaCerta) {
+                //Agora checamos se a resposta realmente foi correta
+                $('tbody  > tr').each(function () {
+                    //Codigo do padrao (nome)
+                    var codigoPadrao = $(this).find(">:first-child > h5").first().attr('cod');
+
+                    if (typeof codigoPadrao !== 'undefined' && codigoPadrao !== null) {
+                        if (codigoPadrao != $(this).attr('cod'))
+                            respostaCerta = false;
+
+                        // Tipo do padrao (criacional, estrutural, etc.)
+                        if ($(this).find(">:nth-child(2) > select").val() != $(this).attr('tipo'))
+                            respostaCerta = false;
+                    }
+                });
+            }
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>

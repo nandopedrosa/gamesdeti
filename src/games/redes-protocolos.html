@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">Redes de Computadores - Protocolos</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">Protocolos definem um conjunto de regras que permitem especificar
+                            aspectos da realização de um serviço. Eles indicam o significado dos quadros, pacotes ou
+                            mensagens trocadas entres as entidades de cada camada. A porta de um protocolo serve de
+                            ponto final de comunicação entre um sistema operacional hospedeiro e outra aplicação cliente
+                            de um computador.
+                        </p>
+                        <p>Associe cada protocolo de rede à sua respectiva porta de funcionamento e se a comunicação
+                            pode ocorrer por TCP, UDP ou ambos.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <table class="table table-bordered  ">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="text-align:center;width:33%">Protocolo</th>
+                            <th scope="col" style="text-align:center;width:33%">Porta</th>
+                            <th scope="col" style="text-align:center;width:33%;">TCP/UDP</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-protocolos">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const protocolos = [];
+        protocolos.push({ nome: "FTP - Dados", tipo: "TCP e UDP", cod: "20" });
+        protocolos.push({ nome: "FTP - Controle", tipo: "TCP e UDP", cod: "21" });
+        protocolos.push({ nome: "SSH", tipo: "TCP e UDP", cod: "22" });
+        protocolos.push({ nome: "TELNET", tipo: "TCP e UDP", cod: "23" });
+
+        protocolos.push({ nome: "SMTP", tipo: "TCP e UDP", cod: "25" });
+        protocolos.push({ nome: "DNS", tipo: "TCP e UDP", cod: "53" });
+        protocolos.push({ nome: "HTTP", tipo: "TCP", cod: "80" });
+        protocolos.push({ nome: "POP3", tipo: "TCP", cod: "110" });
+        protocolos.push({ nome: "IMAP", tipo: "TCP", cod: "143" });
+        protocolos.push({ nome: "SNMP", tipo: "TCP e UDP", cod: "161" });
+        protocolos.push({ nome: "SNMP (trap)", tipo: "TCP e UDP", cod: "162" });
+        protocolos.push({ nome: "HTTPS", tipo: "TCP", cod: "443" });
+
+        protocolos.push({ nome: "CIFS/SMB", tipo: "TCP e UDP", cod: "445" });
+        protocolos.push({ nome: "SMTPS", tipo: "TCP e UDP", cod: "465" });
+        protocolos.push({ nome: "SMPT com TLS", tipo: "TCP e UDP", cod: "587" });
+
+        protocolos.push({ nome: "IMAPS", tipo: "TCP e UDP", cod: "993" });
+        protocolos.push({ nome: "POP3S", tipo: "TCP e UDP", cod: "995" });
+        protocolos.push({ nome: "RDP", tipo: "TCP e UDP", cod: "3389" });
+
+        const quantidadeDeItens = protocolos.length;
+
+        //Imprimindo na tabela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(protocolos);
+            protocolos.splice(item.index, 1); //remove o item do array            
+
+            //Imprimindo na tabela
+            var linhaDaTabela = '<tr><td class="text-center" style="vertical-align:middle;">#NOME#</td><td><div class="form-group"><input cod="#CODIGO#" type="number" class="form-control"></div></td><td><select tipo="#TIPO#" class="form-control"> <option value="" selected disabled></option> <option>TCP</option> <option>UDP</option> <option>TCP e UDP</option> </select></td></tr>';
+
+            linhaDaTabela = linhaDaTabela
+                .replace("#NOME#", item.objeto.nome)
+                .replace("#CODIGO#", item.objeto.cod)
+                .replace("#TIPO#", item.objeto.tipo);
+            $('#tabela-protocolos').append(linhaDaTabela);
+        }
+        
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            //Checamos se o usuário enviou todas as respostas
+                   
+            $("#tabela-protocolos").find('select').each(function () {
+                if ($(this).val() == null) {
+                    respostaCerta = false;
+                    $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+                }
+            });
+
+            $("#tabela-protocolos").find('input').each(function () {
+                var valor = $(this).val();
+                if (valor == '' || valor == null || typeof valor == 'undefined') {
+                    respostaCerta = false;
+                    $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+                }
+            });
+
+            //Agora checamos se a resposta está certa
+            if (respostaCerta) {
+                $('input').each(function () {
+                    var valor = $(this).val();
+                    if (valor != $(this).attr('cod'))
+                        respostaCerta = false;
+                });
+
+                $('select').each(function () {
+                    var valor = $(this).val();
+                    if (valor != $(this).attr('tipo'))
+                        respostaCerta = false;
+                });
+            }
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>

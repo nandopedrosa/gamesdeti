@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Games para memorização em assuntos de Concursos de Tecnologia da Informação">
+    <meta name="author" content="Equipe Caneta Preta">
+    <link rel="icon" href="../img/trofeu.png">
+
+    <title>Games de TI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/gamesdeti.css" rel="stylesheet">
+    <link href="../css/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Script para importar templates -->
+    <script src="../js/html-importer.js"></script>
+</head>
+
+<body>
+
+    <script>HTMLImporter.import("../header-template.html");</script>
+    <script src="../js/dragdrop.js"></script>
+
+    <main role="main">
+
+        <!-- ======= Explicação do Game ======= -->
+        <section>
+            <div class="container mt-4 mb-4">
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="font-weight-light">Bancos de Dados - Comandos</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p></p>
+                        <p class="text-justify">Em sistemas gerenciadores de bancos de dados, é possível executar uma série de comandos com objetivos diferentes. Os comandos podem ser:</p>
+                        <ul>
+                            <li>DDL - Data Definition Language</li>
+                            <li>DML - Data Manipulation Language </li>
+                            <li>DTL - Data Transaction Language</li>
+                            <li>DCL - Data Control Language</li>
+                          </ul>
+                        <p>Associe cada comando de banco de dados ao seu respectivo tipo.</p>
+                        <button onclick="enviar()" type="button" class="btn btn-lg btn-primary text-white ">
+                            Enviar Resposta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======= Início do Game ======= -->
+        <section class="bg-light pt-1 pb-4">
+            <div class="container mt-4">
+                <div id="comandos" style="min-height:100px" class="row mb-5">
+                    <div id="comandos1" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="comandos2" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>
+                    <div id="comandos3" class="col-sm-4" ondrop="drop(event,this)" ondragover="allowDrop(event)">
+                    </div>                   
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: #3ab7c9;">DDL</div>
+                            <div id="ddl" ondrop="drop(event,this)" ondragover="allowDrop(event)" class="card-body"
+                                style="background-color: #d5e6ed;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: #f0700a;">DML</div>
+                            <div id="dml" ondrop="drop(event,this)" ondragover="allowDrop(event)" class="card-body"
+                                style="background-color: #fbdad1;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: #ccd97f;">DTL</div>
+                            <div id="dtl" ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="card-body" style="background-color: #e5eed1;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card mb-3" style="max-width: 19rem;">
+                            <div class="card-header text-bold text-white" style="background-color: rgb(36,114,183);">DCL</div>
+                            <div id="dcl" ondrop="drop(event,this)" ondragover="allowDrop(event)"
+                                class="card-body" style="background-color: rgba(36,114,183,0.5);">
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </section>
+    </main>
+
+    <script>HTMLImporter.import("../footer-template.html");</script>
+
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Funções utilitárias -->
+    <script src="../js/util.js"></script>
+
+    <!-- Telas Modais -->
+    <script>HTMLImporter.import("../modais-template.html");</script>
+
+    <!-- Script do Game -->
+    <script>
+        //Carregando as práticas em um array
+        const comandos = [];
+        comandos.push({ nome: "CREATE", cat: "ddl" });
+        comandos.push({ nome: "ALTER", cat: "ddl" });
+        comandos.push({ nome: "DROP", cat: "ddl" });
+        comandos.push({ nome: "RENAME", cat: "ddl" });
+        comandos.push({ nome: "TRUNCATE", cat: "ddl" });
+        comandos.push({ nome: "COMMENT", cat: "ddl" });
+
+        comandos.push({ nome: "INSERT", cat: "dml" });
+        comandos.push({ nome: "UPDATE", cat: "dml" });
+        comandos.push({ nome: "DELETE", cat: "dml" });
+        comandos.push({ nome: "MERGE", cat: "dml" });
+        comandos.push({ nome: "CALL", cat: "dml" });
+        
+        comandos.push({ nome: "GRANT", cat: "dcl" });
+        comandos.push({ nome: "REVOKE", cat: "dcl" });
+
+        comandos.push({ nome: "COMMIT", cat: "dtl" });
+        comandos.push({ nome: "ROLLBACK", cat: "dtl" });
+        comandos.push({ nome: "SAVEPOINT", cat: "dtl" });        
+
+        const quantidadeDeItens = comandos.length;
+
+        var itemHtmlTemplate = '<h5 categoria="#CATEGORIA#" id="drag#INDEX#" draggable="true" ondragstart="drag(event)"> <span class="badge badge-secondary">#NOME#</span></h5>';
+
+        //Imprimindo na tela
+        for (let i = 0; i < quantidadeDeItens; i++) {
+            const item = getRandomItem(comandos);
+            comandos.splice(item.index, 1); //remove o item do array
+            var itemHtml = itemHtmlTemplate.replace("#INDEX#", i).replace("#CATEGORIA#", item.objeto.cat).replace("#NOME#", item.objeto.nome);
+
+            if (i <= 4) {
+                $("#comandos1").append(itemHtml);
+            } else if (i >= 5 && i <= 10) {
+                $("#comandos2").append(itemHtml);
+            } else {
+                $("#comandos3").append(itemHtml);
+            }
+        }
+
+        //Função de enviar a resposta
+        function enviar() {
+            //Definindo o gabarito do game
+            //Gabarito do Game (sempre um PNG com o mesmo nome do HTML do game)
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+            var imagemGabarito = page.replace("html", "png");
+            $("#gabarito").attr("href", "../img/" + imagemGabarito)
+
+            var respostaCerta = true;
+            $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
+
+            //Checamos se o usuário enviou todas as respostas
+            if ($("#comandos h5").children().length > 0) {
+                respostaCerta = false;
+                $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
+            }
+
+            //Checamos cada processo, de cada estágio, e as funções
+            $('.card-body').children('h5').each(function () {
+                if ($(this).attr('categoria') !== $(this).parent().attr('id'))
+                    respostaCerta = false;                    
+            });
+
+
+            if (!respostaCerta) {
+                $('#resposta-errada').modal('show');
+            } else {
+                $('#resposta-certa').modal('show');
+            }
+        }
+    </script>
+    <!-- Fim do script do game -->
+
+</body>
+
+</html>

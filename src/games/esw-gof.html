@@ -153,14 +153,14 @@
                 $("#padroes1").append(itemHtml);
             } else if (i >= 6 && i <= 11) {
                 $("#padroes2").append(itemHtml);
-            } else if (i >= 12 && i <= 18) {
+            } else if (i >= 12 && i <= 17) {
                 $("#padroes3").append(itemHtml);
             } else {
                 $("#padroes4").append(itemHtml);
             }
 
             //Imprimindo na tabela
-            var linhaDaTabela = '<tr cod="#CODIGO#" tipo="#TIPO#"><td ondrop="drop(event,this)" ondragover="allowDrop(event)"></td><td><select class="form-control"> <option value="" selected disabled></option> <option>Criacional</option> <option>Estrutural</option> <option>Comportamental</option> </select></td><td class="text-justify">#DESC#</td></tr>'
+            var linhaDaTabela = '<tr cod="#CODIGO#" tipo="#TIPO#"><td ondrop="drop(event,this)" ondragover="allowDrop(event)"></td><td><select class="form-control"> <option value="" selected disabled></option> <option>Criacional</option> <option>Estrutural</option> <option>Comportamental</option> </select></td><td class="text-justify">#DESC#</td></tr>';
             linhaDaTabela = linhaDaTabela
                 .replace('#DESC#', item.objeto.desc)
                 .replace("#CODIGO#", item.objeto.cod)
@@ -179,7 +179,7 @@
             var respostaCerta = true;
             $('#texto-resposta-errada').text('Deu ruim, resposta errada. Tente novamente!');
 
-            /*
+            
                //Checamos se o usuário enviou todas as respostas
                if ($("#padroes h5").children().length > 0) {
                    respostaCerta = false;
@@ -192,7 +192,14 @@
                        $('#texto-resposta-errada').text('Ainda restam itens a serem associados, continue tentando.')
                    }
                });
-               */
+
+            $('tbody  > tr').each(function () {  
+                if($(this).find('td').children('h5').length > 1) {
+                    respostaCerta = false;
+                    $('#texto-resposta-errada').text('Associe apenas um item em cada linha da tabela. Não vale roubar =D.');
+                }
+            });
+               
 
             if (respostaCerta) {
                 //Agora checamos se a resposta realmente foi correta
